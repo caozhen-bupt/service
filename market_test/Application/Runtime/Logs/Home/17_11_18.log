@@ -1,0 +1,18 @@
+[ 2017-11-18T10:02:19+08:00 ] 127.0.0.1 /market_test/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: sex D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 19 行.
+
+[ 2017-11-18T10:02:19+08:00 ] 127.0.0.1 /market_test/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: sex D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 19 行.
+

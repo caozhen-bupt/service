@@ -1,0 +1,673 @@
+[ 2017-11-17T19:22:45+08:00 ] 127.0.0.1 /market_test/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-17T19:28:44+08:00 ] 127.0.0.1 /market_test/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-17T19:28:44+08:00 ] 127.0.0.1 /market_test/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-17T19:31:51+08:00 ] 127.0.0.1 /market_test/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 11 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 11 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+
+[ 2017-11-17T19:31:52+08:00 ] 127.0.0.1 /market_test/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 11 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 11 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+
+[ 2017-11-17T19:32:20+08:00 ] 127.0.0.1 /market_test/?age=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 11 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 11 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+
+[ 2017-11-17T19:32:20+08:00 ] 127.0.0.1 /market_test/?age=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 11 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 11 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+
+[ 2017-11-17T19:32:48+08:00 ] 127.0.0.1 /market_test/?age=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 11 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 11 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+
+[ 2017-11-17T19:33:00+08:00 ] 127.0.0.1 /market_test/?age=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 11 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 11 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+
+[ 2017-11-17T19:33:07+08:00 ] 127.0.0.1 /market_test/?age=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 11 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 11 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+
+[ 2017-11-17T19:33:16+08:00 ] 127.0.0.1 /market_test/?age=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 11 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 11 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+
+[ 2017-11-17T19:33:16+08:00 ] 127.0.0.1 /market_test/?age=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 11 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 11 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+
+[ 2017-11-17T19:33:51+08:00 ] 127.0.0.1 /market_test/?age=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 11 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 11 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+
+[ 2017-11-17T19:33:51+08:00 ] 127.0.0.1 /market_test/?age=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 11 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 11 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+
+[ 2017-11-17T19:34:05+08:00 ] 127.0.0.1 /market_test/?age=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 11 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 11 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+
+[ 2017-11-17T19:37:25+08:00 ] 127.0.0.1 /market_test/?age=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 14 行.
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 15 行.
+
+[ 2017-11-17T19:37:25+08:00 ] 127.0.0.1 /market_test/?age=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 14 行.
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 15 行.
+
+[ 2017-11-17T19:37:34+08:00 ] 127.0.0.1 /market_test/?name=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 14 行.
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 15 行.
+
+[ 2017-11-17T19:37:34+08:00 ] 127.0.0.1 /market_test/?name=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 14 行.
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 15 行.
+
+[ 2017-11-17T19:39:58+08:00 ] 127.0.0.1 /market_test/?name=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 14 行.
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 15 行.
+
+[ 2017-11-17T19:39:58+08:00 ] 127.0.0.1 /market_test/?name=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 14 行.
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 15 行.
+
+[ 2017-11-17T19:40:10+08:00 ] 127.0.0.1 /market_test/index.php?name=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 14 行.
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 15 行.
+
+[ 2017-11-17T19:40:10+08:00 ] 127.0.0.1 /market_test/index.php?name=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 14 行.
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 15 行.
+
+[ 2017-11-17T19:40:31+08:00 ] 127.0.0.1 /market_test/index.php?name=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+
+[ 2017-11-17T19:42:22+08:00 ] 127.0.0.1 /market_test/index.php?name=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant post - assumed 'post' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+
+[ 2017-11-17T19:42:36+08:00 ] 127.0.0.1 /market_test/index.php?sex=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 参数错误或者未定义:name
+
+[ 2017-11-17T19:43:00+08:00 ] 127.0.0.1 /market_test/index.php?sex=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant post - assumed 'post' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+
+[ 2017-11-17T19:43:07+08:00 ] 127.0.0.1 /market_test/index.php?sex=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant post - assumed 'post' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+
+[ 2017-11-17T19:45:42+08:00 ] 127.0.0.1 /market_test/index.php?sex=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant post - assumed 'post' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+
+[ 2017-11-17T19:45:50+08:00 ] 127.0.0.1 /market_test/index.php?sex=2&name=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant post - assumed 'post' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+
+[ 2017-11-17T19:46:07+08:00 ] 127.0.0.1 /market_test/index.php?sex=2&name=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant post - assumed 'post' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+
+[ 2017-11-17T19:50:01+08:00 ] 127.0.0.1 /market_test/index.php?sex=2&name=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+ERR: Think\Controller:_param方法不存在！
+
+[ 2017-11-17T19:50:50+08:00 ] 127.0.0.1 /market_test/index.php?sex=2&name=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant post - assumed 'post' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+
+[ 2017-11-17T19:50:50+08:00 ] 127.0.0.1 /market_test/index.php?sex=2&name=22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant post - assumed 'post' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+
+[ 2017-11-17T19:51:16+08:00 ] 127.0.0.1 /market_test/index.php?sex/2/name/22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant post - assumed 'post' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+
+[ 2017-11-17T19:51:16+08:00 ] 127.0.0.1 /market_test/index.php?sex/2/name/22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant post - assumed 'post' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+
+[ 2017-11-17T19:52:02+08:00 ] 127.0.0.1 /market_test/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant post - assumed 'post' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+
+[ 2017-11-17T19:52:02+08:00 ] 127.0.0.1 /market_test/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant post - assumed 'post' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+
+[ 2017-11-17T19:52:39+08:00 ] 127.0.0.1 /market_test/index.php/Home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant post - assumed 'post' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+
+[ 2017-11-17T19:52:39+08:00 ] 127.0.0.1 /market_test/index.php/Home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant post - assumed 'post' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+
+[ 2017-11-17T19:52:45+08:00 ] 127.0.0.1 /market_test/index.php/Home/name
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Name
+
+[ 2017-11-17T19:52:52+08:00 ] 127.0.0.1 /market_test/index.php/Home/Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant post - assumed 'post' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+
+[ 2017-11-17T19:52:52+08:00 ] 127.0.0.1 /market_test/index.php/Home/Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant post - assumed 'post' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+
+[ 2017-11-17T19:52:57+08:00 ] 127.0.0.1 /market_test/index.php/Home/Index/name
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 非法操作:name
+
+[ 2017-11-17T19:53:04+08:00 ] 127.0.0.1 /market_test/index.php/Home/Index/name/sss
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 非法操作:name
+
+[ 2017-11-17T19:53:23+08:00 ] 127.0.0.1 /market_test/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant post - assumed 'post' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+
+[ 2017-11-17T19:53:24+08:00 ] 127.0.0.1 /market_test/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant post - assumed 'post' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+
+[ 2017-11-17T19:54:36+08:00 ] 127.0.0.1 /market_test/?name=test&age=23
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant post - assumed 'post' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+
+[ 2017-11-17T19:54:36+08:00 ] 127.0.0.1 /market_test/?name=test&age=23
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: name D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant post - assumed 'post' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant sex - assumed 'sex' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 12 行.
+NOTIC: [8] Use of undefined constant get - assumed 'get' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+NOTIC: [8] Use of undefined constant age - assumed 'age' D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 13 行.
+
+[ 2017-11-17T19:55:08+08:00 ] 127.0.0.1 /market_test/?name=test&age=23
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: sex D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 19 行.
+
+[ 2017-11-17T19:55:09+08:00 ] 127.0.0.1 /market_test/?name=test&age=23
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: sex D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 19 行.
+
+[ 2017-11-17T19:55:12+08:00 ] 127.0.0.1 /market_test/?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: sex D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 19 行.
+
+[ 2017-11-17T19:55:12+08:00 ] 127.0.0.1 /market_test/?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [8] Undefined variable: sex D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 19 行.
+

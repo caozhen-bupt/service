@@ -1,0 +1,29 @@
+!SESSION 2017-11-17 18:47:33.157 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_77
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Framework arguments:  -showlocation -showlocation
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -showlocation -data D:\genglintong\glt\二手市场\ThinkPHP_3.2.2_full -showlocation
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-11-17 18:47:43.020
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Administrator'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.zend.php.zendserver.deployment.ui 4 0 2017-11-17 18:47:45.845
+!MESSAGE No local installation of Zend Server was found.
+!STACK 0
+org.zend.sdklib.manager.DetectionException: Error occurred while getting server installation parameters
+	at org.zend.php.zendserver.deployment.core.targets.ZendServerManager.getLocalZendServerFromRegistry(ZendServerManager.java:252)
+	at org.zend.php.zendserver.deployment.core.targets.ZendServerManager.getLocalZendServer(ZendServerManager.java:106)
+	at org.zend.php.zendserver.deployment.ui.LocalZendServerStartup$1.run(LocalZendServerStartup.java:70)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: com.ice.jni.registry.NoSuchKeyException: RegOpenKeyEx(), key='Zend Technologies'
+	at com.ice.jni.registry.RegistryKey.openSubKey(Native Method)
+	at com.ice.jni.registry.RegistryKey.openSubKey(RegistryKey.java:185)
+	at org.zend.php.zendserver.deployment.core.targets.ZendServerManager.getZendServerRegistryKey(ZendServerManager.java:274)
+	at org.zend.php.zendserver.deployment.core.targets.ZendServerManager.getLocalZendServerFromRegistry(ZendServerManager.java:225)
+	... 3 more
