@@ -1,0 +1,137 @@
+[ 2017-11-28T08:20:35+08:00 ] 127.0.0.1 /market_test/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: sex D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 19 行.
+
+[ 2017-11-28T08:20:35+08:00 ] 127.0.0.1 /market_test/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: sex D:\genglintong\glt\market\market_test\Application\Home\Controller\IndexController.class.php 第 19 行.
+
+[ 2017-11-28T08:20:43+08:00 ] 127.0.0.1 /market_test/Home/User/logout/name/gltt/password/123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\genglintong\glt\market\market_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `market_user` [ RunTime:0.225013s ]
+SQL: SELECT `name`,`vol`,`is_sale` FROM `market_user` WHERE `name` = 'gltt' AND `password` = '202cb962ac59075b964b07152d234b70'  [ RunTime:0.235014s ]
+
+[ 2017-11-28T08:20:43+08:00 ] 127.0.0.1 /market_test/Home/User/logout/name/gltt/password/123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\genglintong\glt\market\market_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `market_user` [ RunTime:0.043002s ]
+SQL: SELECT `name`,`vol`,`is_sale` FROM `market_user` WHERE `name` = 'gltt' AND `password` = '202cb962ac59075b964b07152d234b70'  [ RunTime:0.048003s ]
+
+[ 2017-11-28T08:21:09+08:00 ] 127.0.0.1 /market_test/Home/User/logout/name/gltt/password/12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\genglintong\glt\market\market_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `market_user` [ RunTime:0.045003s ]
+SQL: SELECT `name`,`vol`,`is_sale` FROM `market_user` WHERE `name` = 'gltt' AND `password` = 'c20ad4d76fe97759aa27a0c99bff6710'  [ RunTime:0.042002s ]
+
+[ 2017-11-28T08:21:14+08:00 ] 127.0.0.1 /market_test/Home/User/logout/name/gltt/password/123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\genglintong\glt\market\market_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `market_user` [ RunTime:0.041003s ]
+SQL: SELECT `name`,`vol`,`is_sale` FROM `market_user` WHERE `name` = 'gltt' AND `password` = '202cb962ac59075b964b07152d234b70'  [ RunTime:0.041002s ]
+
+[ 2017-11-28T08:21:15+08:00 ] 127.0.0.1 /market_test/Home/User/logout/name/gltt/password/123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\genglintong\glt\market\market_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `market_user` [ RunTime:0.042002s ]
+SQL: SELECT `name`,`vol`,`is_sale` FROM `market_user` WHERE `name` = 'gltt' AND `password` = '202cb962ac59075b964b07152d234b70'  [ RunTime:0.041003s ]
+
+[ 2017-11-28T08:21:23+08:00 ] 127.0.0.1 /market_test/Home/User/login/name/gltt/password/123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\genglintong\glt\market\market_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `market_user` [ RunTime:0.042002s ]
+SQL: INSERT INTO `market_user` (`name`,`password`,`is_sale`) VALUES ('gltt','202cb962ac59075b964b07152d234b70',0) [ RunTime:0.468027s ]
+ERR: 1062:Duplicate entry 'gltt' for key 'name'
+ [ SQL语句 ] : INSERT INTO `market_user` (`name`,`password`,`is_sale`) VALUES ('gltt','202cb962ac59075b964b07152d234b70',0)
+
+[ 2017-11-28T08:33:12+08:00 ] 127.0.0.1 /market_test/Home/User/logoiut/name/gltt/password/123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:logoiut
+
+[ 2017-11-28T08:33:17+08:00 ] 127.0.0.1 /market_test/Home/User/logoout/name/gltt/password/123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:logoout
+
+[ 2017-11-28T08:33:21+08:00 ] 127.0.0.1 /market_test/Home/User/logout/name/gltt/password/123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\genglintong\glt\market\market_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `market_user` [ RunTime:0.042002s ]
+SQL: SELECT `name`,`vol`,`is_sale` FROM `market_user` WHERE `name` = 'gltt' AND `password` = '202cb962ac59075b964b07152d234b70'  [ RunTime:0.042003s ]
+
+[ 2017-11-28T08:33:22+08:00 ] 127.0.0.1 /market_test/Home/User/logout/name/gltt/password/123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\genglintong\glt\market\market_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `market_user` [ RunTime:0.041003s ]
+SQL: SELECT `name`,`vol`,`is_sale` FROM `market_user` WHERE `name` = 'gltt' AND `password` = '202cb962ac59075b964b07152d234b70'  [ RunTime:0.043002s ]
+
+[ 2017-11-28T08:33:55+08:00 ] 127.0.0.1 /market_test/Home/User/logout/name/gltt/password/12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\genglintong\glt\market\market_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `market_user` [ RunTime:0.048003s ]
+SQL: SELECT `name`,`vol`,`is_sale` FROM `market_user` WHERE `name` = 'gltt' AND `password` = 'c20ad4d76fe97759aa27a0c99bff6710'  [ RunTime:0.045002s ]
+
