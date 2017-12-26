@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录界面</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="style/main.css">
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+	<script type="text/javascript" src="js/js.js"></script>
+    <script type="text/javascript">
+	    //窗体改变大小时触发事件
+		window.onresize = setViewSize;
+		var marginLeft=0;
+		var marginTop=0;
+		//设置画布大小，登录页面显示在屏幕最中间
+		function setViewSize() {
+			//计算屏幕大小
+			var w=window.innerWidth
+			|| document.documentElement.clientWidth
+			|| document.body.clientWidth;
+			var h=window.innerHeight
+			|| document.documentElement.clientHeight
+			|| document.body.clientHeight;
+			//设置登陆div的位置
+			marginLeft = (w-468)/2;
+			marginTop = (h-262)/2;
+			document.getElementById("loginFormMain").style.marginLeft=marginLeft;
+			document.getElementById("loginFormMain").style.marginTop=marginTop;
+		}
+		
+		//默认聚焦在用户名输入框上
+		function focusOnUsername() {
+			//调整画布大小和登陆框位置
+		    setViewSize();
+			//默认聚焦在输入框上
+			if (document.loginForm) {
+				var usernameInput = document.loginForm.username;
+				if (usernameInput) {
+					usernameInput.focus();
+				}
+			}
+			return;
+		}
+    
+    	//检查用户输入
+		function checkLogin(){
+			if(checkUsername() && checkPassword()){
+				inputToJson();
+				return true;
+			 }		  
+			return false;
+		}
+		//检查登录用户名
+		function checkUsername(){
+			var username = document.loginForm.username;
+			if(username.value.length!=0){
+				return true;
+			}else{
+				alert("请输入用户名");
+				return false;
+			}
+		}
+		//检查登录密码
+		function checkPassword(){
+			var password = document.loginForm.password;
+			var confirm = document.loginForm.confirm;
+			// if(password.value.length&&password.value===confirmpassward.value){
+			// 	return true;
+			// }
+			if(password.value.length==0){
+				alert("请输入密码");
+				return false;
+			}else if(password.value!=confirm.value){
+				alert("两次密码不一致");
+				return false;
+			}else{
+				
+				return true;
+			}
+
+		}
+		
+		
+		//产生json
+		function inputToJson(){
+			var obj = {};
+			$("form#logForm").find("input:text,:password").map(function() {
+			    obj[this["name"]] = this.value;
+			    return;
+			});
+			json = JSON.stringify(obj);
+			console.log(json);
+		}
+	</script>
+</head>
+
+<body " onload="javascript:focusOnUsername();" >
+	<div id="header">
+			<div class="topbar">
+				<div class="comWidth2">
+					<ul class="leftArea">
+						<li>
+							<a href="#">玫瑰网：二手玫瑰，手有余香</a>
+						</li>
+						<li>
+							<span class="sep">|</span>
+						</li>
+						<li>
+							<a href="#">关于我们</a>
+						</li>
+						<li>
+							<span class="sep">|</span>
+						</li>
+						<li>
+							<a href="#">问题反馈</a>
+						</li>
+						
+					</ul>
+					<div class="rightArea">
+						<div class="login fl">
+							<a href="login.html">登陆</a>
+							<span class="sep">|</span>
+							<a href="register.html">注册</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	 <form action="#0" name="loginForm" id="logForm">
+	 <div  id="loginFormMain">
+		 <table  style="width:468px;height:262px;background-color: gray;text-align: center;">
+			  <tr>
+			  	 <th colspan="2" align="center" >用户登录</th>
+			  </tr>
+			  <tr>
+			      <td>用户名: <input type="text" style="width: 200px;height: 30px;"  name="username"></td>
+			  </tr>
+			  <tr>
+			      <td>密  码: <input type="password"  style="width: 200px;height: 30px;"  name="password"></td>
+			  </tr>
+			  <tr>
+			      <td>确认密码: <input type="password"  style="width: 200px;height: 30px;"  name="confirm"></td>
+			  </tr>
+			  <tr>
+			      <td align="center" ><input  formmethod="post" type="submit" style="cursor: pointer;font-style: inherit;" name="submit"  onclick="return checkLogin();" value="登录" > 
+			          <input type="reset"  style="cursor: pointer;" name=reset  value="重置"></td>
+			  </tr>
+		 </table>
+	 </div>
+	 </form>
+</body>
+</html>
