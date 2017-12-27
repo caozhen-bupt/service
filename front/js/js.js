@@ -206,19 +206,45 @@ $(function() {
 		$(".category_item_box:eq("+index+")").css("display","none");
 	})
 
-	
+	function loadXMLDoc(var searchtxt)
+	{
+		var xmlhttp;
+		if (window.XMLHttpRequest)
+		{// code for IE7+, Firefox, Chrome, Opera, Safari
+		    xmlhttp=new XMLHttpRequest();
+		}
+		else
+		{// code for IE6, IE5
+		    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.onreadystatechange=function()
+		{
+		    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		    {
+		    // document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+		    	console.log(xmlhttp.responseText)
+		    }
+		}
+		xmlhttp.open("GET","http://111.230.233.124/market/index.php/home/goods/searchGoods"+searchtxt,true);
+		xmlhttp.send();
+	}
 
 	$(".search_btn").click(function(){
 		var searchtxt = document.searchForm.searchcontent;
 		console.log(searchtxt.value);
-		var jqxhr = $.ajax('http://111.230.233.124/market/index.php/home/goods/searchGoods', {
-		    dataType: 'json'
-		}).done(function (data) {
-    		var data=JSON.stringify(data);
-			console.log(data)
-    	})
+		var data=JSON.stringify(searchtxt.value);
+		loadXMLDoc(data);
+		// var jqxhr = $.ajax('http://111.230.233.124/market/index.php/home/goods/searchGoods', {
+		//     dataType: 'json'
+		// }).done(function (data) {
+  //   		var data=JSON.stringify(data);
+		// 	console.log(data)
+			
+  //   	})
 		
 	});
+
+	
 
 	// function addurl() {
  //    var js = document.createElement('script'),
