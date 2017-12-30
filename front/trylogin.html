@@ -2,10 +2,6 @@
 <head>  
     <title>登录界面</title>  
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
-    <link rel="stylesheet" type="text/css" href="style/main.css">
-	<link rel="stylesheet" type="text/css" href="style/style.css">
-	<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
-	<script type="text/javascript" src="js/js.js"></script>
     <script type="text/javascript">  
         //窗体改变大小时触发事件  
         window.onresize = setViewSize;  
@@ -44,8 +40,7 @@
         //检查用户输入  
         function checkLogin(){  
             if(checkUsername() && checkPassword()){  
-            	inputToJson();
-                return true;  
+                 return true;  
              }          
             return false;  
         }  
@@ -69,71 +64,28 @@
                 return false;  
             }  
         }  
-        function inputToJson(){
-			var obj = {};
-			$('form[name=loginForm] input').find("input:text,:password").map(function() {
-			    obj[this["name"]] = this.value;
-			    return;
-			});
-			json = JSON.stringify(obj);
-			
-		}
     </script>  
-</head> 
-
-<body " onload="javascript:focusOnUsername();" >
-	<div id="header">
-			<div class="topbar">
-				<div class="comWidth2">
-					<ul class="leftArea">
-						<li>
-							<a href="#">玫瑰网：二手玫瑰，手有余香</a>
-						</li>
-						<li>
-							<span class="sep">|</span>
-						</li>
-						<li>
-							<a href="#">关于我们</a>
-						</li>
-						<li>
-							<span class="sep">|</span>
-						</li>
-						<li>
-							<a href="#">问题反馈</a>
-						</li>
-						
-					</ul>
-					<div class="rightArea">
-						<div class="login fl">
-							<a href="login.html">登陆</a>
-							<span class="sep">|</span>
-							<a href="register.html">注册</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	 <form action="#0" name="loginForm" id="logForm">
-	 <div  id="loginFormMain">
-		 <table  style="width:468px;height:262px;background-color: #d2cfcf;text-align: center;">
-			  <tr>
-			  	 <th colspan="2" align="center" >用户注册</th>
-			  </tr>
-			  <tr>
-			      <td>用户名: <input type="text" style="width: 200px;height: 30px;"  name="username"></td>
-			  </tr>
-			  <tr>
-			      <td>密  码: <input type="password"  style="width: 200px;height: 30px;"  name="password"></td>
-			  </tr>
-			  <tr>
-			      <td>确认密码: <input type="password"  style="width: 200px;height: 30px;"  name="confirm"></td>
-			  </tr>
-			  <tr>
-			      <td align="center" ><input  formmethod="post" type="submit" style="cursor: pointer;font-style: inherit;" name="submit"  onclick="return checkLogin();" value="登录" > 
-			          <input type="reset"  style="cursor: pointer;" name=reset  value="重置"></td>
-			  </tr>
-		 </table>
-	 </div>
-	 </form>
-</body>
-</html>
+</head>  
+  
+<body bgcolor="#1E81C2" onload="javascript:focusOnUsername();" >  
+     <form  action="success.html" name="loginForm" >  
+     <div  id="loginFormMain">  
+         <table  style="width:468px;height:262px;background-color: gray;text-align: center;">  
+              <tr>  
+                 <th colspan="2" align="center" >管理系统登录</th>  
+              </tr>  
+              <tr>  
+                  <td>用户名:<input type="text" style="width: 200px;height: 30px;"  name="username"></td>  
+              </tr>  
+              <tr>  
+                  <td>密  码:<input type="password"  style="width: 200px;height: 30px;"  name="password"></td>  
+              </tr>  
+              <tr>  
+                  <td align="center" ><input  formmethod="post" type="submit" style="cursor: pointer;font-style: inherit;" name="submit"  onclick="return checkLogin();" value="登录" >   
+                      <input type="reset"  style="cursor: pointer;" name=reset  value="重置"></td>  
+              </tr>  
+         </table>  
+     </div>  
+      </form>  
+</body>  
+</html>  
