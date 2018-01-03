@@ -1,5 +1,6 @@
 $(function() {
 	//购物车切换图片
+
 	var isHover = false
 	var timer1 = null;
 	$(".buy_car_img").hover(function() {
@@ -206,52 +207,69 @@ $(function() {
 		$(".category_item_box:eq("+index+")").css("display","none");
 	})
 
-	// function loadXMLDoc(var searchtxt)
-	// {
-	// 	var xmlhttp;
-	// 	if (window.XMLHttpRequest)
-	// 	{// code for IE7+, Firefox, Chrome, Opera, Safari
-	// 	    xmlhttp=new XMLHttpRequest();
-	// 	}
-	// 	else
-	// 	{// code for IE6, IE5
-	// 	    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	// 	}
-	// 	xmlhttp.onreadystatechange=function()
-	// 	{
-	// 	    if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	// 	    {
-	// 	    // document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
-	// 	    	console.log(xmlhttp.responseText)
-	// 	    }
-	// 	}
-	// 	xmlhttp.open("GET","http://111.230.233.124/market/index.php/home/goods/searchGoods"+searchtxt,true);
-	// 	xmlhttp.send();
-	// }
-
-	$(".search_btn").click(function(){
-		var searchtxt = document.searchForm.searchcontent;
-		console.log(searchtxt.value);
-		var data=JSON.stringify(searchtxt.value);
-		// loadXMLDoc(data);
-		// var jqxhr = $.ajax('http://111.230.233.124/market/index.php/home/goods/searchGoods', {
-		//     dataType: 'json'
-		// }).done(function (data) {
-  //   		var data=JSON.stringify(data);
-		// 	console.log(data)
-			
-  //   	})
+	function loadXMLDoc(searchtxt)
+	{
+		var xmlhttp;
+		var result;
+		var length;
+		if (window.XMLHttpRequest)
+		{// code for IE7+, Firefox, Chrome, Opera, Safari
+		    xmlhttp=new XMLHttpRequest();
+		}
+		else
+		{// code for IE6, IE5
+		    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.onreadystatechange=function()
+		{
+		    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		    {
+		        result=JSON.parse(xmlhttp.responseText);
+		        length=Object.keys(result.data).length;
+		        innerHtml(result.data, length);
+		    }
+		}
+		xmlhttp.open("GET","http://111.230.233.124/market/index.php/home/goods/searchGoods?title="+searchtxt,true);
+		xmlhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');  
+		xmlhttp.send();
 		
+	}
+
+	$(".login_btn").click(function(){
+		var items=checkLogin();
+    });
+	
+	$(".search_btn").click(function(){
+		var searchtxt =document.searchForm.searchcontent
+		console.log(searchtxt.value)
+		loadXMLDoc(searchtxt.value);
 	});
 
+	function innerHtml(message, length) { 
+		var result='';
+		for(i=1; i<length; i++){
+			result+='<tr><td><a href="#">'+message[i].title+'</a></td><td>'+message[i].price+'</td><td class="hidden-480">'+message[i].overplus+'</td><td>'+message[i].intro+'</td></tr>';
+		}
+	    document.getElementById("searchResult").innerHTML=result;
+	}  
+
+
+	function jumpTo(p, url) { 
+   		var customerId=sessionStorage.customerId; 
+   		if (customerId == undefined) { 
+     		p.attr("href", "login.html"); 
+		} else { 
+      		p.attr("href", url); 
+    	} 
+	} 
 	
-
-	// function addurl() {
- //    var js = document.createElement('script'),
- //        head = document.getElementsByTagName('head')[0];
- //    js.src = 'http://111.230.233.124/market/index.php/home/goods/searchGoods';
- //    head.appendChild(js);
-// }
-
-
+	function infoJumpTo() { 
+	   var info = $("#info"); 
+	   jumpTo($info, "http://localhost/page/AmountAscension/amountAscension.html"); 
+	} 
+	function starJumpTo() { 
+	   var $star = $("#star"); 
+	   jumpTo($star, "http://localhost/page/MyAccount/myAccount.html"); 
+	}
+	
 });
