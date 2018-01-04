@@ -365,11 +365,10 @@
 		data.append("goodsId",id);
 		data.append("carId",userid);
 		if(num==undefined||num==null||num==""){
-			data.append("nums",1);
+			num=1;
 		}
-		else{
-			data.append("nums",num);
-		}
+		data.append("nums",num);
+		
 	    console.log(num);
 		if(stock>=num){//????
 			$.ajax({  
