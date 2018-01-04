@@ -102,7 +102,7 @@
 
 	<div class="page-content">
 		<div>
-			<span class="profile-picture">
+			<span id="profile-picture">
 				<img id="avatar" class="editable img-responsive" alt="Alex's Avatar" src="images/profile-pic.jpg" />
 			</span>
 		</div>
@@ -111,40 +111,46 @@
 		<div class="profile-user-info profile-user-info-striped">
 			<div class="profile-info-row">
 				<div class="profile-info-name"> 商品名称 </div>
-
 				<div class="profile-info-value">
-					<span class="editable" id="username">抱枕</span>
+					<span class="editable" id="title">1</span>
 				</div>
 			</div>
 
 			<div class="profile-info-row">
 				<div class="profile-info-name"> 剩余量 </div>
-
 				<div class="profile-info-value">
-					<i class="icon-map-marker light-orange bigger-110"></i>
-					<span class="editable" id="country">Netherlands</span>
-					<span class="editable" id="city">Amsterdam</span>
+					<span class="editable" id="overplus">1</span>
 				</div>
 			</div>
 
 			<div class="profile-info-row">
-				<div class="profile-info-name"> 卖家 </div>
-
+				<div class="profile-info-name"> 单价 </div>
 				<div class="profile-info-value">
-					<span class="editable" id="age">38</span>
+					<span class="editable" id="price">1</span>
 				</div>
 			</div>
 
 			<div class="profile-info-row">
 				<div class="profile-info-name"> 商品描述 </div>
-
 				<div class="profile-info-value">
-					<span class="editable" id="signup">20/06/2010</span>
+					<span class="editable" id="intro">1</span>
 				</div>
+			</div>
+			<div class="profile-info-row">
+				<div class="profile-info-name"> 商品类型 </div>
+				<div class="profile-info-value">
+					<span class="editable" id="type">1</span>
+				</div>
+			</div>
+			<div class="row btn-group pull-right">
+				<input type="button" style="cursor: pointer;font-style: inherit;" class="shop_btn btn btn-success btn-sm" value="加入购物车"  onclick="addshop()">
 			</div>
 		</div>
 		<div class="space-20"></div>
 
+		
+
+		<div class="space-20"></div>
 		<div class="widget-box transparent">
 			<div class="widget-header widget-header-small">
 				<h4 class="blue smaller">
@@ -155,26 +161,14 @@
 			<div class="widget-body">
 				<div class="widget-main padding-8">
 					<div id="profile-feed-1" class="profile-feed">
-						<div class="profile-activity clearfix">
-							<div>
-								<p class="user" > Alex Doe </p>
-								changed his profile photo.
-							</div>
-
-						</div>
-
-						<div class="profile-activity clearfix">
-							<div>
-								<p class="user"> Susan Smith </p>
-								is now friends with Alex Doe.
-							</div>
-						</div>
+						
 					</div>
 				</div>
 			</div>
 			<div class="space-20"></div>
 			<div class="space-20"></div>
 			<div class="space-20"></div>
+
 			<div class="row">
 				<div class="col-sm-6">
 					<h4 class="header blue">添加评论</h4>
@@ -197,7 +191,7 @@
 								
 								<div class="btn-group pull-right">
 									
-									<button class="btn btn-sm btn-success" id="publish">
+									<button class="btn btn-sm btn-success" id="publish" onclick="addComment()">
 										<i class="icon-globe bigger-125"></i>
 
 										发布
@@ -247,16 +241,145 @@
 <script type="text/javascript">
 	$(document).ready(function(){
         update();
+        getinfo();
+        getComment();
 	});
 
     function update(){
-	    	if(sessionStorage.customerId !== undefined && sessionStorage.is_sale == 1){
-	    		document.getElementById("iflogin").innerHTML='<a href="jqgrid.html">我的小铺</a>';
-	    	}
-	    	else if(sessionStorage.customerId !== undefined){
-	    		document.getElementById("iflogin").innerHTML='';
-	    	}
-	    }
+		if(sessionStorage.customerId !== undefined && sessionStorage.is_sale == 1){
+			document.getElementById("iflogin").innerHTML='<a href="jqgrid.html">我的小铺</a>';
+		}
+		else if(sessionStorage.customerId !== undefined){
+			document.getElementById("iflogin").innerHTML='';
+		}
+	}
+
+	function getQueryVariable(variable){
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+           var pair = vars[i].split("=");
+           if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+	}
+
+	function getinfo(){
+		var id = getQueryVariable("id");
+
+		$.ajax({  
+            url: 'http://111.230.233.124//market/index.php/home/goods/getgoods?goodId='+id,  
+            type: 'Get',  
+            data: null,  
+            dataType: 'JSON',  
+            cache: false,
+            processData: false,  
+            contentType: false  
+        }).done(function(result){ 
+        	updateInfo(result.data[id]);
+        });
+	}
+
+	var stock;
+	function updateInfo(message){
+		document.getElementById("title").innerText=message["title"];
+		document.getElementById("price").innerText=message["price"];
+		stock=message["overplus"];
+		document.getElementById("overplus").innerText=stock;
+		document.getElementById("intro").innerText=message["intro"]+".";
+		document.getElementById("profile-picture").innerHTML='<img id="avatar" class="editable img-responsive" src="http://'+message["img"]+ '"    />';
+
+		if(message["type"]=="衣"){
+			document.getElementById("type").innerText="服装";
+		}
+		else if(message["type"]=="电"){
+			document.getElementById("type").innerText="电子设备";
+		}
+		if(message["type"]=="家"){
+			document.getElementById("type").innerText="家具";
+		}
+	}
+
+	function getComment()
+	{
+		var id = getQueryVariable("id");
+		$.ajax({  
+            url: 'http://111.230.233.124/market/index.php/home/comments/viewcomments?goodsId='+id,  
+            type: 'Get',  
+            data: null,  
+            dataType: 'JSON',  
+            cache: false,
+            processData: false,  
+            contentType: false  
+        }).done(function(result){ 
+        	console.log(result.data)
+        	updateComment(result.data)
+        	
+        });  
+	}
+
+	function updateComment(message)
+	{
+		$("#profile-feed-1").html('');
+		for(var i in message){
+			$("#profile-feed-1").append('<div class="profile-activity clearfix"><div><p class="user" >'+message[i].username+'</p>'+message[i].content+'</div></div>');
+		}
+
+	}
+
+	function addComment()
+	{
+		var id = getQueryVariable("id");
+		var data = new FormData();
+		var comment=$("#editor2").text();
+		console.log(comment)
+		if(sessionStorage.customerId==undefined||sessionStorage.customerId==null){
+			data.append("userId",1);
+		}
+		else{
+			data.append("userId",sessionStorage.uid);
+		}
+		
+		data.append("content",comment);
+
+		$.ajax({  
+            url: 'http://111.230.233.124/market/index.php/home/comments/addComments?goodsId='+id,  
+            type: 'Post',  
+            data: data,  
+            dataType: 'JSON',  
+            cache: false,
+            processData: false,  
+            contentType: false  
+        }).done(function(result){ 
+        	getComment();
+        	$("#editor2").text('');
+        });  
+	}
+
+	function addshop()
+	{
+		var id = getQueryVariable("id");
+		var userid=sessionStorage.uid;
+		var data=new FormData();
+		data.append("goodsId",id);
+		data.append("carId",userid);
+		data.append("nums",1);
+		if(stock>=1){
+			$.ajax({  
+            url: 'http://111.230.233.124/market/index.php/home/car/addCar',  
+            type: 'Post',  
+            data: data,  
+            dataType: 'JSON',  
+            cache: false,
+            processData: false,  
+            contentType: false  
+        	}).done(function(result){ 
+        		alert("已加入购物车");
+	        	console.log(result);
+	        });  
+		}
+		
+	}
 
 	jQuery(function($) {
 		
@@ -549,8 +672,6 @@ $('[data-toggle="buttons"] .btn').on('click', function(e){
 		else if(which == 2) $(toolbar).addClass('wysiwyg-style2');
 	}
 });
-
-
 
 
 //Add Image Resize Functionality to Chrome and Safari

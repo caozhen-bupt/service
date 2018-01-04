@@ -8,7 +8,7 @@
 	<link href="style/bootstrap.min.css" rel="stylesheet" />
 	<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
 	<script type="text/javascript" src="js/js.js"></script>
-	<title>服装</title>
+	<title>家具</title>
 </head>
 <body>
 	<div id="wrap">
@@ -266,7 +266,7 @@
 			    	console.log(xmlhttp.responseText);
 			        result=JSON.parse(xmlhttp.responseText);
 			        var length  = Object.keys(result.data).length
-			        console.log(length);
+			        console.log(result.data);
 			        innerHtml(result.data, length);
 			    }
 			}
@@ -278,7 +278,8 @@
 
 		function innerHtml(message, length) { 
 			var result='';
-			for(i=1; i<length; i++){
+			// console.log(message[77])
+			for(var i in message){
 				result+='<tr><td><a href="#">'+message[i].title+'</a></td><td>'+message[i].price+'</td><td class="hidden-480">'+message[i].overplus+'</td><td>'+message[i].intro+'</td></tr>';
 			}
 		    document.getElementById("ClothesResult").innerHTML=result;

@@ -253,45 +253,16 @@ $(function() {
 		loadXMLDoc(searchtxt.value);
 	});
 
-	$(".btn").click(function(){
-		// var data={id:,content: document.getElementById('editor2').innerText, user_id: ,goods_id: };
-		//TODO: update current comments
-		// data=JSON.Stringify(data);
-		// $.ajax({  
-  //           url: 'http://111.230.233.124/market1/index.php/Home/comment',  
-  //           type: 'POST',  
-  //           data: data,  
-  //           dataType: 'JSON',  
-  //           cache: false,  
-  //           processData: false,  
-  //           contentType: false  
-  //       }).done(function(ret){ 
-  //       	console.log(ret)
-  //           if(ret['isSuccess']){  
-  //               var result = '';  
-  //               result += 'name=' + ret['name'] + '<br>';  
-  //               result += 'gender=' + ret['gender'] + '<br>';  
-  //               result += '<img src="' + ret['photo']  + '" width="100">';  
-  //               // $('#result').html(result);
-  //               console.log(result)
-
-  //           }else{  
-  //               alert(ret.message);  
-  //           }  
-  //       });  
-	});
-
-
-
 	function innerHtml(message, length) { 
+		var url="commidity.html"
 		var result='';
-		for(i=1; i<length; i++){
-			result+='<tr><td><a href="#">'+message[i].title+'</a></td><td>'+message[i].price+'</td><td class="hidden-480">'+message[i].overplus+'</td><td>'+message[i].intro+'</td></tr>';
+		for(var i in message){
+			result+='<tr><td><a href='+url+'?id='+message[i].id+'>'+message[i].title+'</a></td><td>'+message[i].price+'</td><td class="hidden-480">'+message[i].overplus+'</td><td>'+message[i].intro+'</td></tr>';
 		}
 	    document.getElementById("searchResult").innerHTML=result;
-	}  
+	}
 
-
+	
 	function jumpTo(p, url) { 
    		var customerId=sessionStorage.customerId; 
    		if (customerId == undefined) { 

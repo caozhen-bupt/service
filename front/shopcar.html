@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
 	<link type="text/css" rel="stylesheet" href="style/reset.css" >
@@ -104,7 +104,7 @@
 						<div class="row">
 							<div class="col-sm-5 pull-right">
 								<h4 class="pull-right">
-									<input  formmethod="post" type="submit" style="cursor: pointer;font-style: inherit;" name="submit"  onclick="" value="结算" > 
+									<input  formmethod="post" type="submit" style="cursor: pointer;font-style: inherit;" name="submit" onclick="" value="结算" > 
 								</h4>
 							</div>
 						</div>
@@ -138,27 +138,76 @@
 		<!-- inline scripts related to this page -->
 
 		<script type="text/javascript">
-			var grid_data = 
-			[ 
-				{name:"Desktop Computer",price:"note",stock:"Yes"},
-				{name:"Laptop",price:"Long text ",stock:"Yes"},
-				{name:"LCD Monitor",price:"note3",stock:"Yes"},
-				{name:"Speakers",price:"note",stock:"No"},
-				{name:"Laser Printer",price:"note2",stock:"Yes"},
-				{name:"Play Station",price:"note3",stock:"No"},
-				{name:"Mobile Telephone",price:"note",stock:"Yes"},
-				{name:"Server",price:"note2",stock:"Yes"},
-				
-			];
+			var newData=[];
+			
+
+			// $(document).ready(function(){
+		 //        updateshopcar();
+		        
+			// });
+
+			function updateshopcar(){
+				var carid=sessionStorage.uid;
+				if(carid==undefined||carid==null){
+					carid=2;
+				}
+				$.ajax({  
+		            url: 'http://111.230.233.124/market/index.php/home/car/viewCar?carId='+carid,  
+		            type: 'Get',
+		            data: null,  
+		            dataType: 'JSON', 
+		            cache: false,
+		            processData: false,  
+		            contentType: false  
+		        }).done(function(result){ 
+		        	
+		        	if(result.data.length>=1){
+		        		updateGrid(result.data[0].goods);
+		        	}
+		        });
+			}
+
+			function updateGrid(message){
+				newData=[];
+				for(var i =0; i < message.length; i++){
+					console.log(message[i]);
+					newData.unshift({name:message[i].title, price:message[i].price, stock:message[i].overplus});
+				}
+				console.log(newData)
+			}
+
 			
 			jQuery(function($) {
 				var grid_selector = "#grid-table";
 				var pager_selector = "#grid-pager";
-			
+				var carid=sessionStorage.uid;
+				// var grid_data = 
+				// [ 
+				// 	{name:"Desktop Computer",price:"note",stock:"Yes"},
+				// 	{name:"Laptop",price:"Long text ",stock:"Yes"},
+				// 	{name:"LCD Monitor",price:"note3",stock:"Yes"},
+				// 	{name:"Speakers",price:"note",stock:"No"},
+				// 	{name:"Laser Printer",price:"note2",stock:"Yes"},
+				// 	{name:"Play Station",price:"note3",stock:"No"},
+				// 	{name:"Mobile Telephone",price:"note",stock:"Yes"},
+				// 	{name:"Server",price:"note2",stock:"Yes"},
+					
+				// ];
+				var newData=[];
+				updateshopcar();
+				console.log(newData);
+				if(carid==undefined||carid==null){
+					carid=2;
+				}
+				var grid_data=newData;
+				console.log(grid_data)
+				grid_data.unshift({name:"Server",price:"note2",stock:"Yes"});
+				console.log(grid_data)
+				jQuery(grid_selector).GridUnload();
 				jQuery(grid_selector).jqGrid({
-					//direction: "rtl",
-					data: grid_data,
-					datatype: "local",
+					url: 'http://111.230.233.124/market/index.php/home/car/viewCar?carId='+carid
+					// data: grid_data,
+					datatype: "JSON",
 					height: 250,
 					colNames:[' ', '商品名称','单价','购买量'],
 					colModel:[
@@ -196,11 +245,19 @@
 					},
 			
 					editurl: $path_base+"/dummy.html",//nothing is saved
-					caption: "",
 					autowidth: true
 				});
-			
-			
+
+				jQuery(grid_selector).jqGrid('clearGridData');
+				jQuery(grid_selector).jqGrid('setGridParam',{
+
+					datatype:'local',
+					data:newData,//newData是符合格式要求的重新加载的数据
+
+					page:1//哪一页的值
+
+				}).trigger("reloadGrid");
+
 				function aceSwitch( cellvalue, options, cell ) {
 					setTimeout(function(){
 						$(cell) .find('input[type=checkbox]')

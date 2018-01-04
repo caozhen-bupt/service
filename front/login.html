@@ -79,9 +79,10 @@
               console.log(xmlhttp.responseText)
               if(result.message==="success"){
               	sessionStorage.customerId = name;
+              	sessionStorage.uid = result.user.uid;
               	sessionStorage.is_sale = result.user.is_sale;
               	window.location.href='index.html';
-                console.log("success")
+                console.log(sessionStorage.uid)
               }
               else{
                 alert("用户名或密码错误！");
@@ -89,12 +90,8 @@
           }
       }
       xmlhttp.open("Post","http://111.230.233.124/market/index.php/Home/User/login?",true);
-      xmlhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-      console.log({name:name, password:pwd});
-      // formdata.append("name",name);
-      // formdata.append("password",pwd);
+      xmlhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');      
       var s = JSON.stringify({name:name, password:pwd})
-      console.log(s);
       xmlhttp.send(s);
     }
 

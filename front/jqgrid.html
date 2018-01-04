@@ -93,9 +93,9 @@
 
 							</div>
 
-							<script type="text/javascript">
+							<!-- <script type="text/javascript">
 								var $path_base = "/";//this will be used in gritter alerts containing images
-							</script>
+							</script> -->
 
 							<!-- PAGE CONTENT ENDS -->
 						</div><!-- /.col -->
@@ -199,7 +199,7 @@
 						}, 0);
 					},
 			
-					editurl: $path_base+"/dummy.html",//nothing is saved
+					editurl: "/dummy.html",//nothing is saved
 					caption: "",
 			
 			
@@ -208,7 +208,7 @@
 				});
 			
 				//enable search/filter toolbar
-				//jQuery(grid_selector).jqGrid('filterToolbar',{defaultSearch:true,stringResult:true})
+				
 			
 				//switch element when editing inline
 				function aceSwitch( cellvalue, options, cell ) {
@@ -226,89 +226,6 @@
 								.datepicker({format:'yyyy-mm-dd' , autoclose:true}); 
 					}, 0);
 				}
-			
-			
-				//navButtons
-				// jQuery(grid_selector).jqGrid('navGrid',pager_selector,
-				// 	{ 	//navbar options
-				// 		edit: true,
-				// 		editicon : 'icon-pencil blue',
-				// 		add: true,
-				// 		addicon : 'icon-plus-sign purple',
-				// 		del: true,
-				// 		delicon : 'icon-trash red',
-				// 		search: true,
-				// 		searchicon : 'icon-search orange',
-				// 		refresh: true,
-				// 		refreshicon : 'icon-refresh green',
-				// 		view: true,
-				// 		viewicon : 'icon-zoom-in grey',
-				// 	},
-				// 	{
-				// 		//edit record form
-				// 		//closeAfterEdit: true,
-				// 		recreateForm: true,
-				// 		beforeShowForm : function(e) {
-				// 			var form = $(e[0]);
-				// 			form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
-				// 			style_edit_form(form);
-				// 		}
-				// 	},
-				// 	{
-				// 		//new record form
-				// 		closeAfterAdd: true,
-				// 		recreateForm: true,
-				// 		viewPagerButtons: false,
-				// 		beforeShowForm : function(e) {
-				// 			var form = $(e[0]);
-				// 			form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
-				// 			style_edit_form(form);
-				// 		}
-				// 	},
-				// 	{
-				// 		//delete record form
-				// 		recreateForm: true,
-				// 		beforeShowForm : function(e) {
-				// 			var form = $(e[0]);
-				// 			if(form.data('styled')) return false;
-							
-				// 			form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
-				// 			style_delete_form(form);
-							
-				// 			form.data('styled', true);
-				// 		},
-				// 		onClick : function(e) {
-				// 			alert(1);
-				// 		}
-				// 	},
-				// 	{
-				// 		//search form
-				// 		recreateForm: true,
-				// 		afterShowSearch: function(e){
-				// 			var form = $(e[0]);
-				// 			form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
-				// 			style_search_form(form);
-				// 		},
-				// 		afterRedraw: function(){
-				// 			style_search_filters($(this));
-				// 		}
-				// 		,
-				// 		multipleSearch: true,
-				// 		/**
-				// 		multipleGroup:true,
-				// 		showQuery: true
-				// 		*/
-				// 	},
-				// 	{
-				// 		//view record form
-				// 		recreateForm: true,
-				// 		beforeShowForm: function(e){
-				// 			var form = $(e[0]);
-				// 			form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
-				// 		}
-				// 	}
-				// )
-			
 			
 				
 				function style_edit_form(form) {

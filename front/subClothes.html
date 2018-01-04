@@ -278,7 +278,7 @@
 
 		function innerHtml(message, length) { 
 			var result='';
-			for(i=1; i<length; i++){
+			for(var i in message){
 				result+='<tr><td><a href="#">'+message[i].title+'</a></td><td>'+message[i].price+'</td><td class="hidden-480">'+message[i].overplus+'</td><td>'+message[i].intro+'</td></tr>';
 			}
 		    document.getElementById("ClothesResult").innerHTML=result;
