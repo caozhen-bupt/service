@@ -361,10 +361,17 @@
 		var id = getQueryVariable("id");
 		var userid=sessionStorage.uid;
 		var data=new FormData();
+		var num=prompt("数量","");
 		data.append("goodsId",id);
 		data.append("carId",userid);
-		data.append("nums",1);
-		if(stock>=1){
+		if(num==undefined||num==null||num==""){
+			data.append("nums",1);
+		}
+		else{
+			data.append("nums",num);
+		}
+	    console.log(num);
+		if(stock>=num){//????
 			$.ajax({  
             url: 'http://111.230.233.124/market/index.php/home/car/addCar',  
             type: 'Post',  
@@ -375,10 +382,10 @@
             contentType: false  
         	}).done(function(result){ 
         		alert("已加入购物车");
-	        	console.log(result);
+        		
 	        });  
 		}
-		
+
 	}
 
 	jQuery(function($) {
