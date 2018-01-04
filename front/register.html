@@ -53,11 +53,47 @@
          	alert("两次密码输入不一致！");
          }
         else{
-        	RegisterXMLDoc(username.value,password.value)
+        	registerXMLDoc(username.value,password.value)
           
         } 
       
-      }  
+      }
+
+      function registerXMLDoc(name, pwd)
+	    {
+	      var xmlhttp;
+	      var result;
+	      if (window.XMLHttpRequest)
+	      {// code for IE7+, Firefox, Chrome, Opera, Safari
+	          xmlhttp=new XMLHttpRequest();
+	      }
+	      else
+	      {// code for IE6, IE5
+	          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	      }
+	      xmlhttp.onreadystatechange=function()
+	      {
+	        console.log(xmlhttp.readyState)
+	          if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	          {
+	              result=JSON.parse(xmlhttp.responseText);//返回判断是否正确，跳转或alert
+	              console.log(xmlhttp.responseText)
+	              if(result.message==="success"){
+	                window.location.href="login.html";
+	              }
+	              else{
+	                alert("注册失败，用户名已被注册！");
+	              }
+	          }
+	      }
+	      xmlhttp.open("Post","http://111.230.233.124/market/index.php/Home/User/register?",true);
+	      xmlhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+	      
+	      
+	      var s = JSON.stringify({name:name, password:pwd, is_sale:0})
+	      console.log(s);
+	      xmlhttp.send(s);
+	    }
     </script>  
 </head> 
 
@@ -67,7 +103,7 @@
 				<div class="comWidth2">
 					<ul class="leftArea">
 						<li>
-							<a href="#">玫瑰网：二手玫瑰，手有余香</a>
+							<a href="index.html">玫瑰网：二手玫瑰，手有余香</a>
 						</li>
 						<li>
 							<span class="sep">|</span>
@@ -85,7 +121,7 @@
 					</ul>
 					<div class="rightArea">
 						<div class="login fl">
-							<a href="login.html">登陆</a>
+							<a href="login.html">登录</a>
 							<span class="sep">|</span>
 							<a href="register.html">注册</a>
 						</div>
@@ -112,7 +148,7 @@
 			  </form>
 			  <tr>
 			      <td align="center" >
-			      	<input type="submit" style="cursor: pointer;font-style: inherit;" class="register_btn" value="登录" > 
+			      	<input type="submit" style="cursor: pointer;font-style: inherit;" class="register_btn" value="注册" > 
 			        <input type="reset"  style="cursor: pointer;" name="reset"  value="重置"></td>
 			  </tr>
 		 </table>

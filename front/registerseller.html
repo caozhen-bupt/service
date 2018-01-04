@@ -32,8 +32,8 @@
             //调整画布大小和登陆框位置  
             setViewSize();  
             //默认聚焦在输入框上  
-            if (document.registerForm) {  
-                var usernameInput = document.loginForm.username;  
+            if (document.registerSellForm) {  
+                var usernameInput = document.registerSellForm.username;  
                 if (usernameInput) {  
                     usernameInput.focus();  
                 }  
@@ -41,34 +41,58 @@
             return;  
         }  
       
-        //检查用户输入  
-        function checkLogin(){  
-            if(checkUsername() && checkPassword()){  
-            	
-                return true;  
-             }          
-            return false;  
-        }  
-        //检查登录用户名  
-        function checkUsername(){  
-            var username = document.loginForm.username;  
-            if(username.value.length!=0){  
-                return true;  
-            }else{  
-                alert("请输入用户名");  
-                return false;  
-            }  
-        }  
-        //检查登录密码  
-        function checkPassword(){  
-            var password = document.loginForm.password;  
-            if(password.value.length!=0){  
-                return true;  
-            }else{  
-                alert("请输入密码");  
-                return false;  
-            }  
-        }  
+        function checkregisterSell(){ 
+            var username = document.registerSellForm.username;
+            var password = document.registerSellForm.password;
+            var email = document.registerSellForm.email;
+            var confirm = document.registerSellForm.confirm;
+            if(username.value.length==0 || password.value.length==0 ||confirm.value.length==0 ||email.value.length == 0){ 
+                alert("请输入用户名或密码或email");
+             }
+             else if(password.value !== confirm.value){
+                alert("两次密码输入不一致！");
+             }
+            else{
+                SellRegisterXMLDoc(username.value,password.value,email.value)
+              
+            } 
+          
+        }
+        function SellRegisterXMLDoc(name, pwd, email)
+        {
+          var xmlhttp;
+          var result;
+          if (window.XMLHttpRequest)
+          {// code for IE7+, Firefox, Chrome, Opera, Safari
+              xmlhttp=new XMLHttpRequest();
+          }
+          else
+          {// code for IE6, IE5
+              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange=function()
+          {
+            console.log(xmlhttp.readyState)
+              if (xmlhttp.readyState==4 && xmlhttp.status==200)
+              {
+                  result=JSON.parse(xmlhttp.responseText);//返回判断是否正确，跳转或alert
+                  console.log(xmlhttp.responseText)
+                  if(result.message==="success"){
+                    window.location.href="login.html";
+                  }
+                  else{
+                    alert("注册失败，用户名已被注册！");
+                  }
+              }
+          }
+          xmlhttp.open("Post","http://111.230.233.124/market/index.php/Home/User/register?",true);
+          xmlhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+          console.log({name:name, password:pwd});
+          
+          var s = JSON.stringify({name:name, password:pwd, is_sale:1, email:email})
+          console.log(s);
+          xmlhttp.send(s);
+        }
         
     </script>  
 </head> 
@@ -79,7 +103,7 @@
 				<div class="comWidth2">
 					<ul class="leftArea">
 						<li>
-							<a href="#">玫瑰网：二手玫瑰，手有余香</a>
+							<a href="index.html">玫瑰网：二手玫瑰，手有余香</a>
 						</li>
 						<li>
 							<span class="sep">|</span>
@@ -119,15 +143,15 @@
 			      <td>电子邮箱: <input type="text" style="width: 200px;height: 30px;"  name="email"></td>
 			  </tr>
 			  <tr>
-			      <td>密     码 : <input type="password"  style="width: 200px;height: 30px;"  name="password"></td>
+			      <td>密     码 : <input type="password" style="width: 200px;height: 30px;"  name="password"></td>
 			  </tr>
 			  <tr>
-			      <td>确认密码: <input type="password"  style="width: 200px;height: 30px;"  name="confirm"></td>
+			      <td>确认密码: <input type="password" style="width: 200px;height: 30px;"  name="confirm"></td>
 			  </tr>
 			  </form>
 			  <tr>
 			      <td align="center" >
-			      	<input type="submit" style="cursor: pointer;font-style: inherit;" class="registersell_btn" value="登录" > 
+			      	<input type="submit" style="cursor: pointer;font-style: inherit;" class="registersell_btn" value="注册" > 
 			        <input type="reset"  style="cursor: pointer;" name="reset" value="重置"></td>
 			  </tr>
 		 </table>

@@ -47,7 +47,7 @@
 				<div class="comWidth2">
 					<ul class="leftArea">
 						<li>
-							<a href="#">玫瑰网：二手玫瑰，手有余香</a>
+							<a href="index.html">玫瑰网：二手玫瑰，手有余香</a>
 						</li>
 						<li>
 							<span class="sep">|</span>
@@ -64,8 +64,8 @@
 						
 					</ul>
 					<div class="rightArea">
-						<div class="login fl">
-							<a href="login.html">登陆</a>
+						<div class="login fl" id="iflogin">
+							<a href="login.html">登录</a>
 							<span class="sep">|</span>
 							<a href="register.html">注册</a>
 						</div>
@@ -157,29 +157,16 @@
 					<div id="profile-feed-1" class="profile-feed">
 						<div class="profile-activity clearfix">
 							<div>
-								<img class="pull-left" alt="Alex Doe's avatar" />
-								<a class="user" href="#"> Alex Doe </a>
+								<p class="user" > Alex Doe </p>
 								changed his profile photo.
-								<a href="#">Take a look</a>
-
-								<div class="time">
-									<i class="icon-time bigger-110"></i>
-									an hour ago
-								</div>
 							</div>
 
 						</div>
 
 						<div class="profile-activity clearfix">
 							<div>
-								<img class="pull-left" alt="Susan Smith's avatar" />
-								<a class="user" href="#"> Susan Smith </a>
-
+								<p class="user"> Susan Smith </p>
 								is now friends with Alex Doe.
-								<div class="time">
-									<i class="icon-time bigger-110"></i>
-									2 hours ago
-								</div>
 							</div>
 						</div>
 					</div>
@@ -203,14 +190,14 @@
 
 						<div class="widget-body">
 							<div class="widget-main no-padding">
-								<div class="wysiwyg-editor" id="editor2"></div>
+								<div class="wysiwyg-editor" id="editor2" name="comment"></div>
 							</div>
 
 							<div class="widget-toolbox padding-4 clearfix">
 								
 								<div class="btn-group pull-right">
 									
-									<button class="btn btn-sm btn-success">
+									<button class="btn btn-sm btn-success" id="publish">
 										<i class="icon-globe bigger-125"></i>
 
 										发布
@@ -258,6 +245,19 @@
 <!-- inline scripts related to this page -->
 
 <script type="text/javascript">
+	$(document).ready(function(){
+        update();
+	});
+
+    function update(){
+	    	if(sessionStorage.customerId !== undefined && sessionStorage.is_sale == 1){
+	    		document.getElementById("iflogin").innerHTML='<a href="jqgrid.html">我的小铺</a>';
+	    	}
+	    	else if(sessionStorage.customerId !== undefined){
+	    		document.getElementById("iflogin").innerHTML='';
+	    	}
+	    }
+
 	jQuery(function($) {
 		
 		// *** editable avatar *** //
@@ -516,46 +516,6 @@ function showErrorAlert (reason, detail) {
 	 '<strong>File upload error</strong> '+msg+' </div>').prependTo('#alerts');
 }
 
-//$('#editor1').ace_wysiwyg();//this will create the default editor will all buttons
-
-//but we want to change a few buttons colors for the third style
-$('#editor1').ace_wysiwyg({
-	toolbar:
-	[
-		'font',
-		null,
-		'fontSize',
-		null,
-		{name:'bold', className:'btn-info'},
-		{name:'italic', className:'btn-info'},
-		{name:'strikethrough', className:'btn-info'},
-		{name:'underline', className:'btn-info'},
-		null,
-		{name:'insertunorderedlist', className:'btn-success'},
-		{name:'insertorderedlist', className:'btn-success'},
-		{name:'outdent', className:'btn-purple'},
-		{name:'indent', className:'btn-purple'},
-		null,
-		{name:'justifyleft', className:'btn-primary'},
-		{name:'justifycenter', className:'btn-primary'},
-		{name:'justifyright', className:'btn-primary'},
-		{name:'justifyfull', className:'btn-inverse'},
-		null,
-		{name:'createLink', className:'btn-pink'},
-		{name:'unlink', className:'btn-pink'},
-		null,
-		{name:'insertImage', className:'btn-success'},
-		null,
-		'foreColor',
-		null,
-		{name:'undo', className:'btn-grey'},
-		{name:'redo', className:'btn-grey'}
-	],
-	'wysiwyg': {
-		fileUploadError: showErrorAlert
-	}
-}).prev().addClass('wysiwyg-style2');
-
 
 
 $('#editor2').css({'height':'200px'}).ace_wysiwyg({
@@ -637,11 +597,47 @@ if ( typeof jQuery.ui !== 'undefined' && /applewebkit/.test(navigator.userAgent.
     }
 	
 	enableImageResize();
-
 }
-
-
 });
+
+
+	// function updateXMLDoc()
+	// 	{
+	// 		var xmlhttp;
+	// 		var result;
+	// 		if (window.XMLHttpRequest)
+	// 		{// code for IE7+, Firefox, Chrome, Opera, Safari
+	// 		    xmlhttp=new XMLHttpRequest();
+	// 		}
+	// 		else
+	// 		{// code for IE6, IE5
+	// 		    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	// 		}
+	// 		xmlhttp.onreadystatechange=function()
+	// 		{
+	// 		    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	// 		    {
+	// 		    // document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+	// 		    	console.log(xmlhttp.responseText);
+	// 		        result=JSON.parse(xmlhttp.responseText);
+	// 		        var length  = Object.keys(result.data).length
+	// 		        console.log(length);
+	// 		        innerHtml(result.data, length);
+	// 		    }
+	// 		}
+	// 		xmlhttp.open("GET","http://111.230.233.124/market/index.php/home/goods/searchGoods?type="+"衣",true);
+	// 		xmlhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');  
+	// 		xmlhttp.send();
+			
+	// 	}
+
+	// 	function innerHtml(message, length) { 
+	// 		var result='';
+	// 		for(i=1; i<length; i++){
+	// 			result+='<tr><td><a href="#">'+message[i].title+'</a></td><td>'+message[i].price+'</td><td class="hidden-480">'+message[i].overplus+'</td><td>'+message[i].intro+'</td></tr>';
+	// 		}
+	// 	    document.getElementById("profile-feed-1").innerHTML=result;
+	// 	}
 </script>
 
 

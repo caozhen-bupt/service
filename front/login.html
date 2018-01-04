@@ -40,22 +40,18 @@
                 }  
             }  
             return;  
-        }  
-
-        
-      
-        //检查用户输入  
+        }
+      //检查用户输入  
       function checkLogin(){ 
         var username = document.loginForm.username;
         var password = document.loginForm.password;
         if(username.value.length!=0 && password.value.length!=0){ 
           // return {name:username.value, password:password.value}
-            LoginXMLDoc(username.value,password.value)
+            LoginXMLDoc(username.value,password.value);
           
          }
         else{
           alert("请输入用户名或密码");
-          return;
         } 
       
       }  
@@ -64,8 +60,8 @@
     {
       var xmlhttp;
       var result;
-      var formdata=new FormData();
-     console.log("in")
+      // var formdata=new FormData();
+     // console.log("in")
       if (window.XMLHttpRequest)
       {// code for IE7+, Firefox, Chrome, Opera, Safari
           xmlhttp=new XMLHttpRequest();
@@ -82,6 +78,9 @@
               result=JSON.parse(xmlhttp.responseText);//返回判断是否正确，跳转或alert
               console.log(xmlhttp.responseText)
               if(result.message==="success"){
+              	sessionStorage.customerId = name;
+              	sessionStorage.is_sale = result.user.is_sale;
+              	window.location.href='index.html';
                 console.log("success")
               }
               else{
@@ -98,6 +97,7 @@
       console.log(s);
       xmlhttp.send(s);
     }
+
     </script>  
 </head>  
 

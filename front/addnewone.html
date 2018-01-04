@@ -50,7 +50,7 @@
 				<div class="comWidth2">
 					<ul class="leftArea">
 						<li>
-							<a href="#">玫瑰网：二手玫瑰，手有余香</a>
+							<a href="index.html">玫瑰网：二手玫瑰，手有余香</a>
 						</li>
 						<li>
 							<span class="sep">|</span>
@@ -75,9 +75,9 @@
 		<div class="col-xs-12">
 			<!-- PAGE CONTENT BEGINS -->
 
-			<form class="form-horizontal" name="addnewForm" role="form">
+			<form class="form-horizontal" name="addnewForm" id="form1" role="form">
 				<div class="form-group">
-					<label class="col-sm-3 control-label no-padding-right" for="form-field-1" name="name"> 商品名称 </label>
+					<label class="col-sm-3 control-label no-padding-right" for="form-field-1" name="title"> 商品名称 </label>
 
 					<div class="col-sm-9">
 						<input type="text" id="form-field-1" class="col-xs-10 col-sm-5" />
@@ -98,7 +98,7 @@
 				<div class="space-4"></div>
 
 				<div class="form-group">
-					<label class="col-sm-3 control-label no-padding-right" for="form-field-3" name="stock"> 库存量 </label>
+					<label class="col-sm-3 control-label no-padding-right" for="form-field-3" name="overplus"> 库存量 </label>
 
 					<div class="col-sm-9">
 						<input type="text" id="form-field-3" class="col-xs-10 col-sm-5" />
@@ -116,49 +116,49 @@
 					</div>
 				</div>
 
-				<div class="col-xs-12 col-sm-6">
+				<div class="col-xs-12 col-sm-6" style = "position:relative;left:400px;top:0px">
 					<div class="control-group">
 						<label class="control-label bolder blue">类别</label>
 
 						<div class="radio">
 							<label>
-								<input name="form-field-radio" type="radio" class="ace" />
+								<input name="type" type="radio" class="ace" />
 								<span class="lbl"> 服装</span>
 							</label>
 						</div>
 
 						<div class="radio">
 							<label>
-								<input name="form-field-radio" type="radio" class="ace" />
+								<input name="type" type="radio" class="ace" />
 								<span class="lbl"> 电子设备</span>
 							</label>
 						</div>
 
 						<div class="radio">
 							<label>
-								<input name="form-field-radio" type="radio" class="ace" />
+								<input name="type" type="radio" class="ace" />
 								<span class="lbl"> 家具</span>
 							</label>
 						</div>
 					</div>
 				</div>
+				<div class="space-4"></div>
+
 				<div class="form-group">
 					<div class="col-sm-9">
-						<form action="//dummy.html" class="dropzone">
-							<label class="col-sm-3 control-label no-padding-right" for="form-field-5"></label>
-							<div class="col-sm-9">
-								<input name="file" id="form-field-5" class="col-xs-10 col-sm-5" type="file" multiple="" />
-							</div>
-						</form>
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-5"></label>
+						<div class="col-sm-9">
+							<input name="file" id="form-field-5" class="col-xs-10 col-sm-5" type="file" multiple="" />
+						</div>
 					</div>
 				</div>
 				<div class="space-4"></div>
-
 				
+				</form>
 
 				<div class="clearfix form-actions">
 					<div class="col-md-offset-3 col-md-9">
-						<button class="btn btn-info" type="button">
+						<button class="btn btn-info" type="button" class="addnew_btn" onclick="addnew();">
 							<i class="icon-ok bigger-110"></i>
 							确认
 						</button>
@@ -170,9 +170,9 @@
 						</button>
 					</div>
 				</div>
-
+				
 				<div class="hr hr-24"></div>
-			</form>
+			
 		</div>
 	</div>
 	<script type="text/javascript">
@@ -218,23 +218,31 @@
 		});
 
 		function addnew(){
-			var title = document.addnewForm.name;
-			var price = document.addnewForm.price;
-            var stock = document.addnewForm.stock;
-            var intro = document.addnewForm.intro;
+            var data = new FormData($('#form1')[0]);
+            console.log(data)
+	        $.ajax({  
+	            url: 'http://111.230.233.124/market/index.php/Home/Goods/addGoods?',  
+	            type: 'POST',  
+	            data: data,  
+	            dataType: 'JSON',  
+	            cache: false,  
+	            processData: false,  
+	            contentType: false  
+	        }).done(function(ret){ 
+	        	console.log(ret)
+	            if(ret['isSuccess']){  
+	                var result = '';  
+	                result += 'name=' + ret['name'] + '<br>';  
+	                result += 'gender=' + ret['gender'] + '<br>';  
+	                result += '<img src="' + ret['photo']  + '" width="100">';  
+	                // $('#result').html(result);
+	                console.log(result)
 
-            if(title.value.length!=0 && price.value.length!=0 && stock.value.length!=0){
-            	console.log(title+price+stock+intro)
-            	return true;
-            }
-            else{
-            	alert("请输入商品名称、单价或库存量！");
-            	return false;
-            }
-
-
-
-
+	            }else{  
+	                alert(ret.message);  
+	            }  
+	        });  
+	        return false;  
 
 
 		}

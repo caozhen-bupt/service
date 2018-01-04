@@ -12,13 +12,27 @@
 	<title>搜索</title>
 </head>
 <body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+	        update();
+		});
+
+	    function update(){
+	    	if(sessionStorage.customerId !== undefined && sessionStorage.is_sale == 1){
+	    		document.getElementById("iflogin").innerHTML='<a href="jqgrid.html">我的小铺</a>';
+	    	}
+	    	else if(sessionStorage.customerId !== undefined){
+	    		document.getElementById("iflogin").innerHTML='';
+	    	}
+	    }
+	</script>
 	<div id="wrap">
 		<div id="header">
 			<div class="topbar">
 				<div class="comWidth2">
 					<ul class="leftArea">
 						<li>
-							<a href="#">玫瑰网：二手玫瑰，手有余香</a>
+							<a href="index.html">玫瑰网：二手玫瑰，手有余香</a>
 						</li>
 						<li>
 							<span class="sep">|</span>
@@ -35,8 +49,8 @@
 						
 					</ul>
 					<div class="rightArea">
-						<div class="login fl">
-							<a href="login.html">登陆</a>
+						<div class="login fl" id="iflogin">
+							<a href="login.html">登录</a>
 							<span class="sep">|</span>
 							<a href="register.html">注册</a>
 						</div>
