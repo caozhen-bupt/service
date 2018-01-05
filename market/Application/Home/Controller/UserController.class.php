@@ -3,26 +3,9 @@ namespace Home\Controller;
 use Think\Controller;
 class UserController extends Controller {
     public function index($name = '',$age = ''){
-        $data['name'] = 'genglintong';
-        $data['sex'] = 'man';
-        $data['age'] = '22';
-        
-        //$name = $this->__get($name);
-        
-        //$sex = I(post.sex,'a');
-        //$age = I(get.age,'a');
-        //echo $name."\n";
-        if ($name != ''){
-            $data['name'] = $name;
-        }
-        
-        if ($sex != ''){
-            $data['sex'] = $age;
-        }
-        
-        $this->ajaxReturn($data);
-        //$this->show('<style type="text/css">*{ padding: 0; margin: 0; } div{ padding: 4px 48px;} body{ background: #fff; font-family: "微软雅黑"; color: #333;font-size:24px} h1{ font-size: 100px; font-weight: normal; margin-bottom: 12px; } p{ line-height: 1.8em; font-size: 36px }</style><div style="padding: 24px 48px;"> <h1>:)</h1><p>欢迎使用 <b>ThinkPHP</b>！</p><br/>[ 您现在访问的是Home模块的Index控制器 ]</div><script type="text/javascript" src="http://tajs.qq.com/stats?sId=9347272" charset="UTF-8"></script>','utf-8');
+    	$this->display("login");
     }
+    
     public function test(){
         $User  = M("User"); //实例化User对象
         $fields['name'] = 'genglintong';
@@ -40,19 +23,40 @@ class UserController extends Controller {
      * @param name  用户名
      * @param password  用户密码
      * @param is_sale  是否卖/买家  默认买家
+     * @param email  卖家邮箱
      * @return  boolean  是否成功
      */
-    public function login($name , $password , $is_sale = 0){
-        $data['name'] = $name;
-        $data['password'] = md5($password);
-        $data['is_sale'] = $is_sale;
+    public function register(){
+    	header("Access-Control-Allow-Origin: *");
+    	$put=file_get_contents('php://input');
+    	$postData=json_decode($put,true);
+    	
+    	$User  = M("User"); //实例化User对象
+        $data['name'] = $postData['name'];
+        $data['password'] = md5($postData['password']);
+        $fields['name'] = $postData['name'];
         
-        $User = M('user');
+        if (isset($postData['is_sale']) && $postData['is_sale'] == '1'){
+        	$data['is_sale'] = intval($postData['is_sale']);
+        	$data['email'] = $postData['email'];
+        }
         
-        $log =  $User->add($data);
-        //   正常返回主键id   错误则返回false
+        //判断是否已经注册
+        $isRegister = $User->where($fields)->find();
         
-        $this->ajaxReturn($log);
+        $registerData = Array();
+        if ($isRegister){
+        	$registerData['message'] = "nameRepeat";
+        }
+        else{
+        	$result = $User->add($data);
+        	if ($result){
+        		$registerData['message'] = "success";
+        	}else {
+        		$registerData['message'] = "wrong";
+        	}
+        }
+        $this->ajaxReturn($registerData);
     }
     
     /** logout  用户登录验证
@@ -60,18 +64,34 @@ class UserController extends Controller {
      * @param password 密码
      * @return  boolean
      */
-    public function logout($name , $password){
+    public function login(){
+        header("Access-Control-Allow-Origin: *");
+        $put=file_get_contents('php://input');
+		$postData=json_decode($put,true);
+    	$name = $postData['name'];
+        $password = $postData['password'];        
+
         $User  = M("User"); //实例化User对象
         $fields['name'] = $name;
-        $fields['password'] = md5($password);
+        $password = md5($password);
         //查询
-        $data = $User->where($fields)->getField('name,vol,is_sale');
-        
-        //var_dump();
-        if($data != false){
-            $this->ajaxReturn($data);
-        }else{
-            $this->ajaxReturn(false);
+        $data = $User->where($fields)->limit(1)->getField('user_id,name,password,vol,is_sale');
+        $loginData = array();
+        $data = current($data);
+        if ($data && $data['password']== $password) {
+			session('uid',$data['user_id']);
+			session('name',$data['name']);
+			session('is_sale',$data['is_sale']);
+			$userData['uid'] = $data['user_id'];
+			$userData['name'] = $data['name'];
+			$userData['is_sale'] = $data['is_sale'];
+			
+			$loginData['message'] = 'success';
+			$loginData['user'] = $userData;
         }
+        else{
+            $loginData['message'] = 'wrong';
+        }
+        $this->ajaxReturn($loginData); 
     }
 }

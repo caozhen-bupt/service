@@ -2,7 +2,9 @@
 namespace Home\Controller;
 use Think\Controller;
 
-class GoodsController extends Controller{
+class GoodsController extends BaseController{
+	const ERRORMESSAGE = "wrong";
+	const SUCCSEEMESSAGE = "success";
     
     /**
      * 搜索接口
@@ -46,7 +48,7 @@ class GoodsController extends Controller{
             $fields['vol'] = array('gt',$vol);
         }
         
-        $data = $Goods->where($fields)->order($order)->limit($pn,10)->getField('id,title,price,overplus,intro,user_id,type');
+        $data = $Goods->where($fields)->order($order)->limit($pn*10,10)->getField('id,title,price,overplus,intro,user_id,type,img');
         $sql = $sql = $Goods->getLastSql();
         
         //echo $sql;
@@ -60,29 +62,130 @@ class GoodsController extends Controller{
      * 添加商品
      * 
      */
-    public function addGoods($title = "test" ,$price = 90,$vol = 1,$desc = "test",$userId =1){
+    public function addGoods($userId =1){
     	//实例化  Goods
     	$Goods = M('Goods');
     	$data = array();
-    	$data['title'] = $title;
-    	$data['price'] = $price;
-    	$data['overplus'] = $vol;
-    	$data['intro'] = "test";
+    	$data['title'] = I("post.title");
+    	$data['price'] = I("post.price");
+    	$data['overplus'] = I("post.vol");
+    	$data['intro'] = I("post.intro");
     	$data['user_id'] = $userId;
-    	$data['type'] = "衣";
+    	$data['type'] = I("post.type");
+    	$data['img'] = $this->uploadPic();
     	
-    	//插入数据库
-    	//$sql = $Goods->add($data)->buildSql();
     	$result = $Goods->add($data);
     	$sql = $Goods->getLastSql();
     	$addData['sql'] = $sql;
     	if ($result){
     		$addData['id'] = $result;
-    		$addData['message'] = "插入成功";
+    		$addData['message'] = self::SUCCSEEMESSAGE;
     	}else{
     		$addData['id'] = -1;
-    		$addData['message'] = "插入失败";
+    		$addData['message'] = self::ERRORMESSAGE;
     	}
     	$this->ajaxReturn($addData);
     }
+    
+    /**
+     * desc  根据goodsid  查找是商品信息
+     */
+    public function getGoods($goodId = 0 , $pn = 0){
+    	$Goods = M('Goods');
+    	$fields = array();
+    	$data = array();
+    	
+    	$fields['id'] = $goodId;
+    	//$user_id = I("post.userId");
+    	$data = $Goods->where($fields)->limit($pn*10,10)->getField('id,title,price,overplus,intro,type,img');
+    	//$sql = $sql = $Goods->getLastSql();
+    	
+    	
+    	//$serchData['sql'] = $sql;
+    	$serchData['message'] = "success";
+    	$serchData['data'] = $data;
+    	
+    	$this->ajaxReturn($serchData);
+    }
+    
+    /**
+     * @desc  根据userid获取商品信息
+     * @param number $user_id
+     */
+    public function viewGoods($user_id= 1 , $pn = 0){
+    	//header("Access-Control-Allow-Origin: *");
+    	$Goods = M('Goods');
+    	$fields = array();
+    	$data = array();
+        
+    	$fields['user_id'] = $user_id;
+    	//$user_id = I("post.userId");
+    	$data = $Goods->where($fields)->limit($pn*10,10)->getField('id,title,price,overplus,intro,type,img');
+    	$sql = $sql = $Goods->getLastSql();
+    
+    	//echo $sql;
+    	$serchData['sql'] = $sql;
+    	$serchData['data'] = $data;
+    
+    	$this->ajaxReturn($serchData);
+    }
+    
+    /**
+     * 删除商品
+     * @param number $user_id
+     */
+    public function deleteGoods($goodsId = 1){
+    	$Goods = M('Goods');
+    	$fields['id'] = $goodsId;
+       	$result = $Goods->where($fields)->delete();
+        //var_dump($result); 	
+    	if ($result) {
+    		$data['message'] = self::MESSAGESUCCSEE;
+    	}else {
+    		$data['message'] = self::MESSAGEERROR;
+    	}
+    	$this->ajaxReturn($data);
+    }
+    
+    /**
+     * 更新商品
+     * @param number $user_id
+     */
+    public function updateGoods($goodsId = 1){
+    	//实例化  Goods
+    	$Goods = M('Goods');
+    	$data = array();
+		$fields['id'] = $goodsId;
+    	if (I("post.title")) {
+    		$data['title'] =  I("post.title");
+    	}
+    	if ($data['price']) {
+    		$data['price'] = I("post.price");
+    	}
+    	if (I("post.vol")) {
+    		$data['overplus'] = I("post.vol");;
+    	}
+    	if (I("post.intro")) {
+    		$data['intro'] = I("post.intro");
+    	}
+    	if (I("post.type")) {
+    	 	$data['type'] = I("post.type");
+    	}
+    	if (I("post.goodsId")) {
+			$fields['id'] = I("post.goodsId");
+		}
+		//$data['title'] = 'ddd';
+    	$result = $Goods->where($fields)->save($data);
+    	//var_dump($result);
+    	$sql = $Goods->getLastSql();
+		$updateData['sql'] = $sql;
+		if ($result) {
+    		$updateData['message'] = self::MESSAGESUCCSEE;
+    	}else {
+    		$updateData['message'] = self::MESSAGEERROR;
+    	}
+    	
+    	$this->ajaxReturn($updateData);
+    }
+    
 }

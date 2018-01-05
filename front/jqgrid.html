@@ -272,6 +272,12 @@
 					buttons.addClass('btn btn-sm').find('[class*="-icon"]').remove();//ui-icon, s-icon
 					buttons.eq(0).addClass('btn-danger').prepend('<i class="icon-trash"></i>');
 					buttons.eq(1).prepend('<i class="icon-remove"></i>')
+					var form = document.getElementById("DelData");
+					var htmlcontent = form.innerHTML;
+					var id=htmlcontent.replace(/[^0-9]/ig,"");
+					console.log(id);
+
+					
 				}
 				
 				function style_search_filters(form) {

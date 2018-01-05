@@ -31,7 +31,7 @@ class IndexController extends Controller {
         $data = $User->where($fields)->select();
         echo $User->count();
         var_dump($data);
-        
+        $data['test']=test;        
         $this->ajaxReturn($data);
     }
 }

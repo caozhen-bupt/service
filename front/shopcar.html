@@ -96,7 +96,7 @@
 						<div class="row">
 							<div class="col-sm-5 pull-right">
 								<h4 class="pull-right">
-									Total amount :
+									合计 :
 									<span class="red" id="amount"></span>
 								</h4>
 							</div>
@@ -331,6 +331,28 @@
 				buttons.addClass('btn btn-sm').find('[class*="-icon"]').remove();//ui-icon, s-icon
 				buttons.eq(0).addClass('btn-danger').prepend('<i class="icon-trash"></i>');
 				buttons.eq(1).prepend('<i class="icon-remove"></i>')
+				var form = document.getElementById("DelData");
+				var htmlcontent = form.innerHTML;
+				var id=htmlcontent.replace(/[^0-9]/ig,"");
+				console.log(id);
+
+				buttons.eq(0).click(function(){
+					// console.log();
+					$.ajax({  
+			            url: 'http://111.230.233.124/market/index.php/home/car/deleteCar?carId='+nData[id-1].carId,  
+			            type: 'Get',
+			            data: null,  
+			            dataType: 'JSON', 
+			            cache: false,
+			            processData: false,  
+			            contentType: false  
+			        }).done(function(result){ 
+			        	updateshopcar();
+			        	console.log(result);
+			        	pageInit(nData)
+			        	
+			        });
+				})
 			}
 			
 			function style_search_filters(form) {
