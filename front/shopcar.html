@@ -274,9 +274,16 @@
 		            processData: false,  
 		            contentType: false  
 		        }).done(function(result){ 
-		        	updateshopcar();
-		        	console.log(result);
-		        	pageInit(nData)
+		        	if(result.message=="success"){
+		        		alert("结账成功！宝贝已在路上~");
+		        		window.location.href="shopcar.html";
+		        	}
+		        	// updateshopcar();
+		        	// console.log(result);
+		        	// pageInit(nData)
+		        	else{
+		        		alert("结账失败！您账户余额不足或宝贝库存不足");
+		        	}
 		        	
 		        });
 			});

@@ -147,6 +147,10 @@
 				if(sessionStorage.customerId=="undefined"){
 					window.location.href="login.html"
 				}
+				else if(sessionStorage.is_sale !==1 ){
+					alert("对不起，您非卖家！")
+					window.location.href="index.html";
+				}
 
 				function updateItems(){
 					var userid=sessionStorage.uid;
