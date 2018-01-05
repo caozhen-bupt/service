@@ -104,7 +104,7 @@
 						<div class="row">
 							<div class="col-sm-5 pull-right">
 								<h4 class="pull-right">
-									<input  formmethod="post" type="submit" style="cursor: pointer;font-style: inherit;" name="submit" onclick="" value="结算" > 
+									<input  formmethod="post" type="submit" style="cursor: pointer;font-style: inherit;" id="pay" value="结算" > 
 								</h4>
 							</div>
 						</div>
@@ -174,71 +174,90 @@
 		        });
 			}
 
-		function updateGrid(message){
-			var newData=[];
-			for(var i =0; i < message.length; i++){
-				newData.unshift({name:message[i].name, price:message[i].price, stock:message[i].nums, goodsid:message[i].id});
+			function updateGrid(message){
+				var newData=[];
+				for(var i =0; i < message.length; i++){
+					newData.unshift({name:message[i].name, price:message[i].price, nums:message[i].nums, carId:message[i].id});
+				}
+				console.log(newData);
+				return newData;
 			}
-			console.log(newData);
-			return newData;
-		}
 
-		function pageInit(nData){
-			console.log(nData);
-			jQuery("#grid-table").jqGrid({
-				datatype: "local",
-				data:nData,
-				height: 250,
-				colNames:[' ', '商品名称','单价','购买量'],
-				colModel:[
-					{name:'myac',index:'', width:80, fixed:true, sortable:false, resize:false,
-						formatter:'actions', 
-						formatoptions:{ 
-							keys:true,
-							delOptions:{recreateForm: true, beforeShowForm:beforeDeleteCallback},
-						}
+			function pageInit(nData){
+				console.log(nData);
+				jQuery(grid_selector).jqGrid({
+					datatype: "local",
+					data:nData,
+					height: 250,
+					colNames:[' ', '商品名称','单价','购买量',''],
+					colModel:[
+						{name:'myac',index:'', width:80, fixed:true, sortable:false, resize:false,
+							formatter:'actions', 
+							formatoptions:{ 
+								keys:true,
+								delOptions:{recreateForm: true, beforeShowForm:beforeDeleteCallback},
+							}
+						},
+						
+						{name:'name',index:'name', width:150,editable: false},
+						{name:'price',index:'price',width:90, editable:false},
+						{name:'nums',index:'nums', width:70, editable: true,editoptions: {size:"20",maxlength:"30"}},
+						{name:'carId',index:'carId', width:0.1, editable: true,editoptions: {size:"0.1",maxlength:"0.1"}},
+						
+					], 
+			
+					viewrecords : true,
+					rowNum:10,
+					rowList:[10,20,30],
+					pager : pager_selector,
+					altRows: true,
+					
+					multiselect: true,
+			        multiboxonly: true,
+			
+					loadComplete : function() {
+						var table = this;
+						setTimeout(function(){
+							styleCheckbox(table);
+							updateActionIcons(table);
+							updatePagerIcons(table);
+							enableTooltips(table);
+						}, 0);
 					},
-					
-					{name:'name',index:'name', width:150,editable: false},
-					{name:'price',index:'price',width:90, editable:false},
-					{name:'stock',index:'stock', width:70, editable: true,editoptions: {size:"20",maxlength:"30"}},
-					
-				], 
-		
-				viewrecords : true,
-				rowNum:10,
-				rowList:[10,20,30],
-				pager : pager_selector,
-				altRows: true,
-				
-				multiselect: true,
-		        multiboxonly: true,
-		
-				loadComplete : function() {
-					var table = this;
-					setTimeout(function(){
-						styleCheckbox(table);
-						updateActionIcons(table);
-						updatePagerIcons(table);
-						enableTooltips(table);
-					}, 0);
-				},
-		
-				editurl: 'http://111.230.233.124/market/index.php/home/goods/updateGoods?',//goodsid=   nothing is saved
-				autowidth: true
+			
+					editurl: 'http://111.230.233.124/market/index.php/home/car/updateCar?',//goodsid=   nothing is saved
+					autowidth: true
+				});
+
+			}
+			
+			$("#pay").click(function(){
+				var ids=jQuery(grid_selector).jqGrid('getGridParam','selarrrow');
+				var idlist=[];
+				for(var i=0; i<ids.length; i++){
+					idlist.append(nData[i].carId);
+				}
+				console.log(idlist);
+				idlist=JSON.stringify(idlist);
+				console.log(sessionStorage.uid);
+				$.ajax({  
+		            url: 'http://111.230.233.124/market/index.php/home/car/purchase?',  
+		            type: 'Post',
+		            data: idlist,  
+		            dataType: 'JSON', 
+		            cache: false,
+		            processData: false,  
+		            contentType: false  
+		        }).done(function(result){ 
+		        	updateshopcar();
+		        	console.log(result);
+		        	pageInit(nData)
+		        	
+		        });
 			});
-
-		}
-			
-			
 			
 
-			// for ( var i = 0; i <= grid_data.length; i++){
-			//     jQuery(grid_selector).jqGrid('addRowData', i + 1, grid_data[i]);
-			// }
 			
-			var id=jQuery(grid_selector).jqGrid('getGridParam','selrow');
-			console.log(id);
 			// jQuery(grid_selector).jqGrid('clearGridData');
 			// jQuery(grid_selector).jqGrid('setGridParam',{
 

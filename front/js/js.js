@@ -6,11 +6,11 @@ $(function() {
 	$(".buy_car_img").hover(function() {
 		isHover = true;
 		$(".buy_car_img").attr("src", "images/shopcarhover.png");
-		$(".buy_car_spec").animate({
-			height: 100
-		}, 200, function() {
-			$(".buy_car p").html("购物车中还没有商品，赶紧选购吧！");
-		});
+		// $(".buy_car_spec").animate({
+		// 	height: 100
+		// }, 200, function() {
+			// $(".buy_car p").html("购物车中还没有商品，赶紧选购吧！");
+		// });
 	}, function() {
 		isHover = false;
 		$(this).stop(timer1);
@@ -207,7 +207,7 @@ $(function() {
 		$(".category_item_box:eq("+index+")").css("display","none");
 	})
 
-	function loadXMLDoc(searchtxt)
+	function loadXMLDoc(searchtxt, page)
 	{
 		var xmlhttp;
 		var result;
@@ -225,11 +225,15 @@ $(function() {
 		    if (xmlhttp.readyState==4 && xmlhttp.status==200)
 		    {
 		        result=JSON.parse(xmlhttp.responseText);
+		        console.log(result);
+		        if(result.data==null){
+		        	return;
+		        }
 		        length=Object.keys(result.data).length;
 		        innerHtml(result.data, length);
 		    }
 		}
-		xmlhttp.open("GET","http://111.230.233.124/market/index.php/home/goods/searchGoods?title="+searchtxt,true);
+		xmlhttp.open("GET","http://111.230.233.124/market/index.php/home/goods/searchGoods?title="+searchtxt+"&pn="+page,true);
 		xmlhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');  
 		xmlhttp.send();
 		
@@ -247,11 +251,28 @@ $(function() {
 		checkregisterSell();
 	});
 
-	
+	var page=0;
+	var searchtxt="";
 	$(".search_btn").click(function(){
-		var searchtxt =document.searchForm.searchcontent;
-		loadXMLDoc(searchtxt.value);
+		searchtxt =document.searchForm.searchcontent;
+		loadXMLDoc(searchtxt.value, page);
 	});
+
+	$("#previous").click(function(){
+		if(page>=1){
+    		page=page-1;
+    	}
+		loadXMLDoc(searchtxt.value, page);
+	});
+
+	$("#next").click(function(){
+		var tmp=page+1;
+    	var result=loadXMLDoc(searchtxt.value, tmp);
+    	if(result===true){
+    		page+=1;
+    	}
+	});
+
 
 	function innerHtml(message, length) { 
 		var url="commidity.html"
@@ -281,5 +302,7 @@ $(function() {
 	   var $star = $("#star"); 
 	   jumpTo($star, "http://localhost/page/MyAccount/myAccount.html"); 
 	}
+
+
 	
 });

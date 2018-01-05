@@ -169,7 +169,7 @@
 					var newData=[];
 					console.log(message)
 					for(var i in message){
-						newData.unshift({name:message[i].title, price:message[i].price, stock:message[i].overplus, intro:message[i].intro});
+						newData.unshift({title:message[i].title, price:message[i].price, vol:message[i].overplus, intro:message[i].intro, goodsId:message[i].id});
 					}
 					console.log(newData);
 					return newData;
@@ -180,7 +180,7 @@
 						data: nData,
 						datatype: "local",
 						height: 250,
-						colNames:[' ', '商品名称','单价', '库存量', '商品描述'],
+						colNames:[' ', '商品名称','单价', '库存量', '商品描述', ''],
 						colModel:[
 							{name:'myac',index:'', width:80, fixed:true, sortable:false, resize:false,
 								formatter:'actions', 
@@ -192,11 +192,11 @@
 								}
 							},
 							
-							{name:'name',index:'name', width:150,editable: true,editoptions:{size:"20",maxlength:"30"}},
+							{name:'title',index:'title', width:150,editable: true,editoptions:{size:"20",maxlength:"30"}},
 							{name:'price',index:'price',width:90, editable: true,editoptions:{size:"20",maxlength:"30"}},
-							{name:'stock',index:'stock', width:70, editable: true,editoptions:{size:"20",maxlength:"30"}},
+							{name:'vol',index:'vol', width:70, editable: true,editoptions:{size:"20",maxlength:"30"}},
 							{name:'intro',index:'intro', width:200, editable: true,editoptions:{size:"20",maxlength:"30"}},
-							
+							{name:'goodsId',index:'goodsId', width:0.1, editable: true,editoptions:{size:"0.1",maxlength:"0.1"}},
 						], 
 				
 						viewrecords : true,
@@ -220,10 +220,8 @@
 							}, 0);
 						},
 				
-						editurl: "/dummy.html",//nothing is saved
+						editurl: "http://111.230.233.124/market/index.php/home/goods/updateGoods?",//nothing is saved
 						caption: "",
-				
-				
 						autowidth: true
 				
 					});

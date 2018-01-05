@@ -226,6 +226,14 @@
 									</tbody>
 								</table>
 							</div>
+							<div class="row">
+								<button id="previous" onclick="pre()">
+									上一页
+								</button>
+								<button id="next" onclick="post()">
+									下一页
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -234,6 +242,22 @@
 	</div>
 
 	<script type="text/javascript">
+		var page=0;
+		function pre(){
+	    	if(page>=1){
+	    		page=page-1;
+	    	}
+	    	updateXMLDoc(page);
+	    }
+
+	    function post(){
+	    	var tmp=page+1;
+	    	var result=updateXMLDoc(tmp);
+	    	if(result===true){
+	    		page+=1;
+	    	}
+
+	    }
 		$(document).ready(function(){
         	updateXMLDoc();
         	update();
@@ -248,7 +272,7 @@
 	    	}
 	    }
 
-		function updateXMLDoc()
+		function updateXMLDoc(page)
 		{
 			var xmlhttp;
 			var result;
@@ -267,12 +291,19 @@
 			    // document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
 			    	console.log(xmlhttp.responseText);
 			        result=JSON.parse(xmlhttp.responseText);
-			        var length  = Object.keys(result.data).length
+			        
 			        console.log(result.data);
-			        innerHtml(result.data, length);
+			        if(result.data!=null){
+			        	var length  = Object.keys(result.data).length
+			        	innerHtml(result.data, length);
+			        	return true;
+			        }
+			        else{
+			        	return false;
+			        }
 			    }
 			}
-			xmlhttp.open("GET","http://111.230.233.124/market/index.php/home/goods/searchGoods?type="+"家",true);
+			xmlhttp.open("GET","http://111.230.233.124/market/index.php/home/goods/searchGoods?type="+"家&pn="+page,true);
 			xmlhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');  
 			xmlhttp.send();
 			
