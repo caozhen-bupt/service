@@ -379,28 +379,31 @@
 		}
 		data.append("carId",userid);
 		var num=prompt("数量","");
-		data.append("goodsId",id);
-		if(num==undefined||num==null||num==""){
-			num=1;
-		}
-		data.append("nums",num);
 		
-	    console.log(num);
-		if(stock>=num){//????
-			$.ajax({  
-            url: 'http://111.230.233.124/market/index.php/home/car/addCar',  
-            type: 'Post',  
-            data: data,  
-            dataType: 'JSON',  
-            cache: false,
-            processData: false,  
-            contentType: false  
-        	}).done(function(result){ 
-        		alert("已加入购物车");
-        		
-	        });  
+		if(num==undefined||num==null||num==""){
+			console.log('blank');
 		}
-
+		else{
+			data.append("goodsId",id);
+			data.append("nums",num);
+		
+		    console.log(num);
+			if(stock>=num){
+				$.ajax({  
+	            url: 'http://111.230.233.124/market/index.php/home/car/addCar?',  
+	            type: 'Post',  
+	            data: data,  
+	            dataType: 'JSON',  
+	            cache: false,
+	            processData: false,  
+	            contentType: false  
+	        	}).done(function(result){ 
+	        		alert("已加入购物车");
+	        		
+		        });  
+			}
+		}
+		
 	}
 
 	jQuery(function($) {
@@ -743,14 +746,14 @@ if ( typeof jQuery.ui !== 'undefined' && /applewebkit/.test(navigator.userAgent.
 }
 });
 function shopcarjumpTo(p, url) { 
-	   		var customerId=sessionStorage.customerId; 
-	   		console.log(customerId)
-	   		if (customerId == undefined) { 
-	     		window.location.href="login.html";
-			} else { 
-	      		window.location.href="shopcar.html";
-	    	} 
-		} 
+		var customerId=sessionStorage.customerId; 
+		console.log(customerId)
+		if (customerId == undefined) { 
+ 		window.location.href="login.html";
+	} else { 
+  		window.location.href="shopcar.html";
+	} 
+} 
 </script>
 
 
