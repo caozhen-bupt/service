@@ -67,7 +67,17 @@
 						<div class="login fl" id="iflogin">
 							<a href="login.html">登录</a>
 							<span class="sep">|</span>
-							<a href="register.html">注册</a>
+							<a href="register.html">注册买家</a>
+							<span class="sep">|</span>
+							<a href="registerseller.html">注册卖家</a>
+						</div>
+						<div class="buy_car fl">
+							<a onclick='shopcarjumpTo()'>
+								<img src="images/shopcar.png" class="buy_car_img fr" />
+							</a>
+							<div class="buy_car_spec">
+								
+							</div>
 						</div>
 					</div>
 				</div>
@@ -732,7 +742,15 @@ if ( typeof jQuery.ui !== 'undefined' && /applewebkit/.test(navigator.userAgent.
 	enableImageResize();
 }
 });
-
+function shopcarjumpTo(p, url) { 
+		var customerId=sessionStorage.customerId; 
+		console.log(customerId)
+		if (customerId == undefined) { 
+ 		window.location.href="login.html";
+	} else { 
+  		window.location.href="shopcar.html";
+	} 
+} 
 </script>
 
 

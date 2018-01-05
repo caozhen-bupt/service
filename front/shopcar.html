@@ -258,7 +258,7 @@
 				var ids=jQuery(grid_selector).jqGrid('getGridParam','selarrrow');
 				var idlist=[];
 				for(var i in ids){
-					idlist.unshift(nData[ids[i]-1]);
+					idlist.unshift(nData[ids[i]-1].carId);
 				}
 				idlist=JSON.stringify(idlist);
 				console.log(idlist);
@@ -278,7 +278,7 @@
 		        });
 			});
 
-			onselect
+			
 			
 
 			

@@ -276,8 +276,24 @@
 					var htmlcontent = form.innerHTML;
 					var id=htmlcontent.replace(/[^0-9]/ig,"");
 					console.log(id);
+					buttons.eq(0).click(function(){
+					console.log(nData[id-1]);
+					$.ajax({  
+			            url: 'http://111.230.233.124/market/index.php/home/goods/deleteGoods?goodsId='+nData[id-1].goodsId,  
+			            type: 'Get',
+			            data: null,  
+			            dataType: 'JSON', 
+			            cache: false,
+			            processData: false,  
+			            contentType: false  
+			        }).done(function(result){ 
+			        	updateItems();
+			        	console.log(result);
+			        	pageInit(nData)
+			        	
+			        });
+				})
 
-					
 				}
 				
 				function style_search_filters(form) {
