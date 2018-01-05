@@ -97,7 +97,7 @@
 							<div class="col-sm-5 pull-right">
 								<h4 class="pull-right">
 									Total amount :
-									<span class="red"></span>
+									<span class="red" id="amount"></span>
 								</h4>
 							</div>
 						</div>
@@ -144,6 +144,7 @@
 			var grid_selector = "#grid-table";
 			var pager_selector = "#grid-pager";
 			
+			
 			updateshopcar();
 			console.log(nData);
 			var carid;
@@ -168,7 +169,6 @@
 		        }).done(function(result){ 
 		        	if(result.data.length>=1){
 		        		nData=updateGrid(result.data);
-		        		console.log(nData);
 		        		pageInit(nData)
 		        	}
 		        });
@@ -179,12 +179,10 @@
 				for(var i =0; i < message.length; i++){
 					newData.unshift({name:message[i].name, price:message[i].price, nums:message[i].nums, carId:message[i].id});
 				}
-				console.log(newData);
 				return newData;
 			}
 
 			function pageInit(nData){
-				console.log(nData);
 				jQuery(grid_selector).jqGrid({
 					datatype: "local",
 					data:nData,
@@ -226,7 +224,32 @@
 					},
 			
 					editurl: 'http://111.230.233.124/market/index.php/home/car/updateCar?',//goodsid=   nothing is saved
-					autowidth: true
+					autowidth: true,
+
+
+					onSelectRow: function(){
+						var ids=jQuery(grid_selector).jqGrid('getGridParam','selarrrow');
+						var amount=0;
+						for(var i in ids){
+							amount+=nData[ids[i]-1].price*nData[ids[i]-1].nums;
+						}
+						document.getElementById("amount").innerText=amount;
+					}, 
+
+					onSelectAll: function(ids, status){
+						var amount=0;
+						console.log(ids)
+						for(var i in ids){
+							amount+=nData[ids[i]-1].price*nData[ids[i]-1].nums;
+						}
+						if(status===true){
+							document.getElementById("amount").innerText=amount;
+						}
+						else{
+							document.getElementById("amount").innerText=0;
+						}
+					}
+
 				});
 
 			}
@@ -234,12 +257,11 @@
 			$("#pay").click(function(){
 				var ids=jQuery(grid_selector).jqGrid('getGridParam','selarrrow');
 				var idlist=[];
-				for(var i=0; i<ids.length; i++){
-					idlist.append(nData[i].carId);
+				for(var i in ids){
+					idlist.unshift(nData[ids[i]-1]);
 				}
-				console.log(idlist);
 				idlist=JSON.stringify(idlist);
-				console.log(sessionStorage.uid);
+				console.log(idlist);
 				$.ajax({  
 		            url: 'http://111.230.233.124/market/index.php/home/car/purchase?',  
 		            type: 'Post',
@@ -255,6 +277,8 @@
 		        	
 		        });
 			});
+
+			onselect
 			
 
 			
@@ -399,7 +423,7 @@
 				$(table).find('.ui-pg-div').tooltip({container:'body'});
 			}
 		
-			//var selr = jQuery(grid_selector).jqGrid('getGridParam','selrow');
+			
 		
 		
 		});
