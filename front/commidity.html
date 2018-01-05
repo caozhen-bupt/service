@@ -287,7 +287,7 @@
 		stock=message["overplus"];
 		document.getElementById("overplus").innerText=stock;
 		document.getElementById("intro").innerText=message["intro"]+".";
-		document.getElementById("profile-picture").innerHTML='<img id="avatar" class="editable img-responsive" src="http://'+message["img"]+ '"    />';
+		document.getElementById("profile-picture").innerHTML='<img id="avatar" class="editable img-responsive" src="'+message["img"]+ '"    />';
 
 		if(message["type"]=="衣"){
 			document.getElementById("type").innerText="服装";
@@ -334,7 +334,8 @@
 		var comment=$("#editor2").text();
 		console.log(comment)
 		if(sessionStorage.customerId==undefined||sessionStorage.customerId==null){
-			data.append("userId",1);
+			window.location.href="login.html"
+			// data.append("userId",1);
 		}
 		else{
 			data.append("userId",sessionStorage.uid);
@@ -361,9 +362,14 @@
 		var id = getQueryVariable("id");
 		var userid=sessionStorage.uid;
 		var data=new FormData();
+		
+		if(userid==undefined||userid==null){
+			window.location.href="login.html";
+			return;
+		}
+		data.append("carId",userid);
 		var num=prompt("数量","");
 		data.append("goodsId",id);
-		data.append("carId",userid);
 		if(num==undefined||num==null||num==""){
 			num=1;
 		}
@@ -727,44 +733,6 @@ if ( typeof jQuery.ui !== 'undefined' && /applewebkit/.test(navigator.userAgent.
 }
 });
 
-
-	// function updateXMLDoc()
-	// 	{
-	// 		var xmlhttp;
-	// 		var result;
-	// 		if (window.XMLHttpRequest)
-	// 		{// code for IE7+, Firefox, Chrome, Opera, Safari
-	// 		    xmlhttp=new XMLHttpRequest();
-	// 		}
-	// 		else
-	// 		{// code for IE6, IE5
-	// 		    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	// 		}
-	// 		xmlhttp.onreadystatechange=function()
-	// 		{
-	// 		    if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	// 		    {
-	// 		    // document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
-	// 		    	console.log(xmlhttp.responseText);
-	// 		        result=JSON.parse(xmlhttp.responseText);
-	// 		        var length  = Object.keys(result.data).length
-	// 		        console.log(length);
-	// 		        innerHtml(result.data, length);
-	// 		    }
-	// 		}
-	// 		xmlhttp.open("GET","http://111.230.233.124/market/index.php/home/goods/searchGoods?type="+"衣",true);
-	// 		xmlhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');  
-	// 		xmlhttp.send();
-			
-	// 	}
-
-	// 	function innerHtml(message, length) { 
-	// 		var result='';
-	// 		for(i=1; i<length; i++){
-	// 			result+='<tr><td><a href="#">'+message[i].title+'</a></td><td>'+message[i].price+'</td><td class="hidden-480">'+message[i].overplus+'</td><td>'+message[i].intro+'</td></tr>';
-	// 		}
-	// 	    document.getElementById("profile-feed-1").innerHTML=result;
-	// 	}
 </script>
 
 

@@ -40,7 +40,9 @@
 							<a href="register.html">注册</a>
 						</div>
 						<div class="buy_car fl">
-							<img src="images/shopcar.png" class="buy_car_img fr"/>
+							<a onclick="shopcarjumpTo()">
+								<img src="images/shopcar.png" class="buy_car_img fr"/>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -275,14 +277,23 @@
 			xmlhttp.send();
 			
 		}
-
 		function innerHtml(message, length) { 
+			var url="commidity.html"
 			var result='';
 			for(var i in message){
-				result+='<tr><td><a href="#">'+message[i].title+'</a></td><td>'+message[i].price+'</td><td class="hidden-480">'+message[i].overplus+'</td><td>'+message[i].intro+'</td></tr>';
+				result+='<tr><td><a href='+url+'?id='+message[i].id+'>'+message[i].title+'</a></td><td>'+message[i].price+'</td><td class="hidden-480">'+message[i].overplus+'</td><td>'+message[i].intro+'</td></tr>';
 			}
 		    document.getElementById("ClothesResult").innerHTML=result;
 		}
+		function shopcarjumpTo(p, url) { 
+	   		var customerId=sessionStorage.customerId; 
+	   		console.log(customerId)
+	   		if (customerId == undefined) { 
+	     		window.location.href="login.html";
+			} else { 
+	      		window.location.href="shopcar.html";
+	    	} 
+		} 
 	</script>
 
 </body>

@@ -42,7 +42,7 @@
 			<div class="comWidth2">
 				<ul class="leftArea">
 					<li>
-						<a href="#">玫瑰网：二手玫瑰，手有余香</a>
+						<a href="index.html">玫瑰网：二手玫瑰，手有余香</a>
 					</li>
 					<li>
 						<span class="sep">|</span>
@@ -97,7 +97,7 @@
 							<div class="col-sm-5 pull-right">
 								<h4 class="pull-right">
 									Total amount :
-									<span class="red">$395</span>
+									<span class="red"></span>
 								</h4>
 							</div>
 						</div>
@@ -139,64 +139,55 @@
 
 	<script type="text/javascript">
 		var nData=[];
-		var grid_data = 
-		[ 
-			{name:"Desktop Computer",price:"note",stock:"Yes"},
-			{name:"Laptop",price:"Long text ",stock:"Yes"},
-			{name:"LCD Monitor",price:"note3",stock:"Yes"},
-			{name:"Speakers",price:"note",stock:"No"},
-			{name:"Laser Printer",price:"note2",stock:"Yes"},
-			{name:"Play Station",price:"note3",stock:"No"},
-			{name:"Mobile Telephone",price:"note",stock:"Yes"},
-			{name:"Server",price:"note2",stock:"Yes"},
-			
-		];
-		grid_data.unshift({name:5, price:5, stock:5});
 
-		function updateshopcar(){
-			var carid=sessionStorage.uid;
-			if(carid==undefined||carid==null){
-				carid=2;
-			}
-			$.ajax({  
-	            url: 'http://111.230.233.124/market/index.php/home/car/viewCar?carId='+carid,  
-	            type: 'Get',
-	            data: null,  
-	            dataType: 'JSON', 
-	            cache: false,
-	            processData: false,  
-	            contentType: false  
-	        }).done(function(result){ 
-	        	if(result.data.length>=1){
-	        		nData=updateGrid(result.data);
-	        		console.log(nData);
-	        	}
-	        });
-		}
-
-		function updateGrid(message){
-			var newData=[];
-			for(var i =0; i < message.length; i++){
-				newData.unshift({name:message[i].name, price:message[i].price, stock:message[i].nums});
-			}
-			console.log(newData);
-			return newData;
-		}
-			
 		jQuery(function($) {
 			var grid_selector = "#grid-table";
 			var pager_selector = "#grid-pager";
-			var carid=sessionStorage.uid;
-			var newData=[];
+			
 			updateshopcar();
 			console.log(nData);
-
+			var carid;
 			if(carid==undefined||carid==null){
 				carid=2;
 			}
 			jQuery(grid_selector).GridUnload();
-			jQuery(grid_selector).jqGrid({
+
+			function updateshopcar(){
+				var carid=sessionStorage.uid;
+				if(carid==undefined||carid==null){
+					carid=2;
+				}
+				$.ajax({  
+		            url: 'http://111.230.233.124/market/index.php/home/car/viewCar?carId='+carid,  
+		            type: 'Get',
+		            data: null,  
+		            dataType: 'JSON', 
+		            cache: false,
+		            processData: false,  
+		            contentType: false  
+		        }).done(function(result){ 
+		        	if(result.data.length>=1){
+		        		nData=updateGrid(result.data);
+		        		console.log(nData);
+		        		pageInit(nData)
+		        	}
+		        });
+			}
+
+		function updateGrid(message){
+			var newData=[];
+			for(var i =0; i < message.length; i++){
+				newData.unshift({name:message[i].name, price:message[i].price, stock:message[i].nums, goodsid:message[i].id});
+			}
+			console.log(newData);
+			return newData;
+		}
+
+		function pageInit(nData){
+			console.log(nData);
+			jQuery("#grid-table").jqGrid({
 				datatype: "local",
+				data:nData,
 				height: 250,
 				colNames:[' ', '商品名称','单价','购买量'],
 				colModel:[
@@ -210,7 +201,7 @@
 					
 					{name:'name',index:'name', width:150,editable: false},
 					{name:'price',index:'price',width:90, editable:false},
-					{name:'number',index:'number', width:70, editable: true,editoptions: {size:"20",maxlength:"30"}},
+					{name:'stock',index:'stock', width:70, editable: true,editoptions: {size:"20",maxlength:"30"}},
 					
 				], 
 		
@@ -233,24 +224,30 @@
 					}, 0);
 				},
 		
-				editurl: $path_base+"/dummy.html",//nothing is saved
+				editurl: 'http://111.230.233.124/market/index.php/home/goods/updateGoods?',//goodsid=   nothing is saved
 				autowidth: true
 			});
 
-			for ( var i = 0; i <= grid_data.length; i++){
-			    jQuery(grid_selector).jqGrid('addRowData', i + 1, grid_data[i]);
-			}
+		}
+			
+			
 			
 
-			jQuery(grid_selector).jqGrid('clearGridData');
-			jQuery(grid_selector).jqGrid('setGridParam',{
+			// for ( var i = 0; i <= grid_data.length; i++){
+			//     jQuery(grid_selector).jqGrid('addRowData', i + 1, grid_data[i]);
+			// }
+			
+			var id=jQuery(grid_selector).jqGrid('getGridParam','selrow');
+			console.log(id);
+			// jQuery(grid_selector).jqGrid('clearGridData');
+			// jQuery(grid_selector).jqGrid('setGridParam',{
 
-				datatype:'local',
-				data:newData,//newData是符合格式要求的重新加载的数据
+			// 	datatype:'local',
+			// 	data:newData,//newData是符合格式要求的重新加载的数据
 
-				page:1//哪一页的值
+			// 	page:1//哪一页的值
 
-			}).trigger("reloadGrid");
+			// }).trigger("reloadGrid");
 
 			function aceSwitch( cellvalue, options, cell ) {
 				setTimeout(function(){

@@ -263,12 +263,13 @@ $(function() {
 	}
 
 	
-	function jumpTo(p, url) { 
+	function shopcarjumpTo(p, url) { 
    		var customerId=sessionStorage.customerId; 
+   		console.log(customerId)
    		if (customerId == undefined) { 
-     		p.attr("href", "login.html"); 
+     		window.location.href="login.html";
 		} else { 
-      		p.attr("href", url); 
+      		window.location.href="shopcar.html";
     	} 
 	} 
 	

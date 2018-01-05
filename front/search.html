@@ -13,6 +13,16 @@
 </head>
 <body>
 	<script type="text/javascript">
+
+		function shopcarjumpTo(p, url) { 
+	   		var customerId=sessionStorage.customerId; 
+	   		console.log(customerId)
+	   		if (customerId == undefined) { 
+	     		window.location.href="login.html";
+			} else { 
+	      		window.location.href="shopcar.html";
+	    	} 
+		} 
 		$(document).ready(function(){
 	        update();
 		});
@@ -55,10 +65,9 @@
 							<a href="register.html">注册</a>
 						</div>
 						<div class="buy_car fl">
-							<img src="images/shopcar.png" class="buy_car_img fr"/>
-							<div class="buy_car_spec">
-								<p>汽车</p>
-							</div>
+							<a onclick="shopcarjumpTo()">
+								<img src="images/shopcar.png" class="buy_car_img fr"/>
+							</a>
 						</div>
 					</div>
 				</div>
