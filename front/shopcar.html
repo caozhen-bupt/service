@@ -143,6 +143,9 @@
 		jQuery(function($) {
 			var grid_selector = "#grid-table";
 			var pager_selector = "#grid-pager";
+			if(sessionStorage.customerId=="undefined"){
+				window.location.href="login.html"
+			}
 			
 			
 			updateshopcar();

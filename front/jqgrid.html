@@ -144,6 +144,9 @@
 				var pager_selector = "#grid-pager";
 				updateItems();
 				console.log(nData);
+				if(sessionStorage.customerId=="undefined"){
+					window.location.href="login.html"
+				}
 
 				function updateItems(){
 					var userid=sessionStorage.uid;

@@ -265,12 +265,25 @@
 
 	    }
 		function update(){
-	    	if(sessionStorage.customerId !== undefined && sessionStorage.is_sale == 1){
-	    		document.getElementById("iflogin").innerHTML='<a href="jqgrid.html">我的小铺</a>';
+	    	console.log(sessionStorage.customerId)
+	    	if(sessionStorage.customerId == "undefined"){
+	    		document.getElementById("iflogin").innerHTML='<a href="login.html">登录</a><span class="sep">|</span><a href="register.html">注册买家</a><span class="sep">|</span><a href="registerseller.html">注册卖家</a>';
+	    	}
+	    	else if(sessionStorage.customerId !== undefined && sessionStorage.is_sale == 1){
+	    		document.getElementById("iflogin").innerHTML='<a href="index.html" onclick="logout()">注销</a><span class="sep">|</span><a href="jqgrid.html">我的小铺</a>';
 	    	}
 	    	else if(sessionStorage.customerId !== undefined){
-	    		document.getElementById("iflogin").innerHTML='';
+	    		document.getElementById("iflogin").innerHTML='<a href="index.html" onclick="logout()">注销</a>';
 	    	}
+	    	 
+	    }
+
+	    function logout(){
+	    	sessionStorage.customerId=undefined;
+	    	sessionStorage.is_sale=undefined;
+	    	update();
+	    	console.log(sessionStorage.customerId);
+	    	// alert("yes");
 	    }
 
 		function updateXMLDoc(page)
